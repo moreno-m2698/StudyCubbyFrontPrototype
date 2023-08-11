@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: #ece6d9
+}
+
+.grid-container-1 {
+    display: grid;
+    grid-template-columns: minmax(282px, auto) 282px;
+    grid-template-rows: auto 70px;
+    row-gap: 8px;
+    column-gap: 8px;
+    background: #1c0151;
+}
+
+
+.music-sidebar-container {
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    display: flex;
+    overflow-y: auto;
+
+    background-color: #1b2559;
+    
+    height: 850px;
+
+    border-radius: 6px;
+    border: 8px;
+
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+
+.music-tile-image {
+    padding-right: 8px;
+}
+
+
+.music-tile-image img{
+    width: 100%;
+    max-width: 48px;
+    border-radius: 12%;
+
+}
+
+.track-info-container {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: auto;
+    
+    
+}
+
+.music-tile-title {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 2px;
+}
+
+
+
+.music-tile-list-item {
+    display: flex;
+    background-color: #1b2559;
+    border-radius: 6px;
+    width: 250px;
+    margin-left: 8px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+
+    
+}
+
+.player-container {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    display:flex;
+    background-color: #1c0151;
+    width: max-content;
+    border-radius: 6px;
+    height: 70px;
+    width: 100%;
+}
+
+
+.skip-forward-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border: none;
+    color: white;
+
+    height: 32px;
+    width: 32px;
+
+}
+
+.skip-back-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border: none;
+    height: 32px;
+    width: 32px;
+}
+
+.play-button {
+    background-color: #a119cd;
+    color:black;
+    border: none;
+    border-radius: 32px;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-controls {
+    display:flex;
+    justify-content: center;
+    width:40%;
+    height:auto;
+}
+
+.player-details {
+    display: flex;
+    width: 30%;
+    border-radius: 6px;
+    margin-left: 8px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+.visualizer {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    flex: 1;
+}
+
+.visualizer img{
+    object-fit:contain;
+    height: 100%;
+    max-height: 850px;
+    width: auto;
+}
+
+.player-placeholder {
+    width: 30%
+}
