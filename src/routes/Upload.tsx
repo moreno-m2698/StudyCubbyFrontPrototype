@@ -2,6 +2,7 @@ import Dropzone from "../components/UploadPageComponents/Dropzone";
 import { useState } from "react";
 import SingleDropZoneComponent from "../components/UploadPageComponents/SingleDropZoneComponent";
 import AlbumMaker from "../components/UploadPageComponents/AlbumMaker";
+import SingleMaker from "../components/UploadPageComponents/SingleMaker";
 
 function Upload() {
 
@@ -19,7 +20,7 @@ function Upload() {
       <label for="Single">Make a single</label><br></br>
       <input type="radio" name="upload-selector" value="Tracks" checked={isRadioSelected('Tracks')} onChange={handleRadioClick} />
       <label for="Tracks">Add tracks to album/single</label><br></br>
-      {isRadioSelected('Album') ? <AlbumMaker/>: (isRadioSelected('Single') ? <div>WIP</div>:<SingleDropZoneComponent/> ) }
+      {isRadioSelected('Album') ? <AlbumMaker/>: (isRadioSelected('Single') ? <SingleMaker />:<SingleDropZoneComponent/> ) }
     </div>
   );
 };
