@@ -2,9 +2,9 @@ import axios from "axios";
 import { Track } from "../types";
 
 
-const getTrackImage = async (albumId: number) => {
+const getSingleImage = async (singleId: number) => {
     try {
-      const imageResponse = await axios.get(`http://localhost:3000/album/image/${albumId}`, { responseType: "blob" });
+      const imageResponse = await axios.get(`http://localhost:3000/single/image/${singleId}`, { responseType: "arraybuffer" });
       let imageBlob = new Blob([imageResponse.data], { type: "image/png" });
       const imageURL = URL.createObjectURL(imageBlob);
       return imageURL;
@@ -15,9 +15,9 @@ const getTrackImage = async (albumId: number) => {
   };
   
 
-  const getTrackAudio = async (trackId: number) => {
+  const getSingleAudio = async (singleId: number) => {
     try {
-      const audioResponse = await axios.get(`http://localhost:3000/track/play/${trackId}`, { responseType: "blob" });
+      const audioResponse = await axios.get(`http://localhost:3000/single/play/${singleId}`, { responseType: "blob" });
       let audioBlob = new Blob([audioResponse.data], { type: "audio/mpeg" });
       const audioURL = URL.createObjectURL(audioBlob);
       return audioURL;
@@ -39,8 +39,8 @@ export const getTracks = async () => {
 
             const track = trackResponse.data[i];
 
-            track.image = await getTrackImage(track.albumId);
-            track.audio = await getTrackAudio(track.id);
+            track.image = await getSingleImage(track.albumId);
+            track.audio = await getSingleAudio(track.id);
         }
         const result: getTracksResponse = {
             errorState: false,

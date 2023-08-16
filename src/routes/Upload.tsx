@@ -1,4 +1,3 @@
-import Dropzone from "../components/UploadPageComponents/Dropzone";
 import { useState } from "react";
 import SingleDropZoneComponent from "../components/UploadPageComponents/SingleDropZoneComponent";
 import AlbumMaker from "../components/UploadPageComponents/AlbumMaker";

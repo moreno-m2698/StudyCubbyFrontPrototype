@@ -33,7 +33,7 @@ function SingleMaker() {
           console.log("image", imageResult);
           } catch (error) {
 
-            console.log("Holy shit what went wrong", error )
+            console.log("Something went wrong", error )
 
           };
 
