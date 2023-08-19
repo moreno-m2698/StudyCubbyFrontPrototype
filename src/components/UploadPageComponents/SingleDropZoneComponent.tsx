@@ -1,26 +1,22 @@
 import { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import axios from 'axios';
+import Previewer from './Previewer';
 
 
 function SingleDropZoneComponent() {
 
-    const [track, setTrack] = useState<File|null>(null);
-    const [imageFile, setImageFile] = useState<File|null>(null)
-    const [title, setTitle] = useState<string>('')
-    const [artist, setArtist] = useState<string>('')
+    const [files, setFiles] = useState<File[]>([]);
+    const [albumID, setAlbumID] = useState<number|null>();
 
 
     const handleSubmit = async (event: any) => {
         event.preventDefault();
     
-        if (!track || !imageFile ) return
+        if (!files || !albumID) return
     
         const formData = new FormData()
-        formData.append('track', track);
-        formData.append('cover', imageFile);
-        formData.append('title', title);
-        formData.append('artist', artist);
+        formData.append('tracks', files);
     
 
         const URL = "http://localhost:3000/single"
@@ -34,7 +30,7 @@ function SingleDropZoneComponent() {
     const onDrop = useCallback((acceptedFiles: File[]) => {
         if (acceptedFiles.length) {
 
-        setTrack(acceptedFiles[0])
+        setFiles(acceptedFiles)
         
         }
         console.log(acceptedFiles)
@@ -49,7 +45,7 @@ function SingleDropZoneComponent() {
 
 
         return (<>
-            <h1>Upload a Single</h1>
+            <h1>Upload Tracks to Album</h1>
             <form id='upload-form' encType='multipart/form-data' onSubmit={handleSubmit}>
                 <div {...getRootProps({className:'p-16 mt-10 border border-neutral-200'})} style={{ border: '1px solid #ccc', padding: '20px', textAlign: 'center' }}>
                 <input {...getInputProps()} name="track"/>
@@ -59,14 +55,13 @@ function SingleDropZoneComponent() {
                     <p>Drag and drop audio/image files here, or click to select files</p>
                     )}
                 </div>
-                <h1>Upload an Image</h1>
-                <div id='upload-image'>
-                    <label>Upload an image</label>
-                    <input type="file" accept='image/*' name="cover" onChange={(event: any) => setImageFile(event.target.files[0])} ></input>
-                </div>
-                <h2>Details</h2>
-                <input type="text" placeholder="Title" name="title" onChange={(event: any) => setTitle(event.target.value)}></input>
-                <input type="text" placeholder="Artist" name="artist" onChange={(event: any) => setArtist(event.target.value)}></input>
+                
+                <h2>Album Details</h2>
+                <input type="text" placeholder="Album ID" name="albumID" onChange={(event: any) => setAlbumID(event.target.value)}></input>
+                <ul>
+
+                    {files.length > 0 ? null : null }
+                </ul>
                 <input type='submit'></input>
             </form>
             </>
