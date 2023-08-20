@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DraggablePreview = ({ id, text, index, inputText, setInputText, handleDragStart, handleDragOver, handleDrop }) => {
+const DraggablePreview = ({ id, text, index, inputName, setInputName, handleDragStart, handleDragOver, handleDrop }) => {
   return (
     <div
       className="draggable-element"
@@ -13,9 +13,9 @@ const DraggablePreview = ({ id, text, index, inputText, setInputText, handleDrag
         <span>{text}</span>
         <input
           type="text"
-          value={inputText}
-          onChange={(e) => setInputText(e.target.value)}
-          placeholder="Additional data"
+          value={inputName}
+          onChange={(e) => setInputName(e.target.value)}
+          placeholder="Track Title"
         />
       </div>
     </div>
