@@ -1,5 +1,4 @@
 import { useState } from "react";
-import SingleDropZoneComponent from "../components/UploadPageComponents/SingleDropZoneComponent";
 import AlbumMaker from "../components/UploadPageComponents/AlbumMaker";
 import SingleMaker from "../components/UploadPageComponents/SingleMaker";
 import DragTest from "../components/UploadPageComponents/DragTest";

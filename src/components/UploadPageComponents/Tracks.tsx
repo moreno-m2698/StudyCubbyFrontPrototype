@@ -44,7 +44,7 @@ function Tracks() {
         'audio/*': []
       } });
 
-    const [selectedFile, setSelectedFile] = useState<File|null>(null);
+    //const [selectedFile, setSelectedFile] = useState<File|null>(null);
     const [files, setFiles] = useState<File[]>([])
     const [filePreview, setFilePreview] = useState<fileData[]>([])
     const [albumID, setAlbumID] = useState<string|null>() 
@@ -78,13 +78,16 @@ function Tracks() {
             formData.append('titles', fileNameArray[i]);
           }
 
-          const url = "http://localhost:3000/track/upload/test"
+          const url = "http://localhost:3000/track/upload"
 
           try {
             const result = await axios.post(url, formData)
             console.log(result);
             } catch (error) {
             console.error(error);}
+
+      setFilePreview([])
+      setFiles([])
     }
     
 
