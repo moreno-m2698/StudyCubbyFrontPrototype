@@ -1,9 +1,9 @@
 import { useContext } from "react"
-import { TrackContext } from "../TrackContextComponent"
+import { AppContext } from "../AppContextComponent"
 
 function Details() {
 
-    const {tracks, currentTrackIndex} = useContext(TrackContext)
+    const {tracks, currentTrackIndex} = useContext(AppContext)
 
     return (<>
         <div className="player-details">

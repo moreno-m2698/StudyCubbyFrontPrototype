@@ -1,5 +1,5 @@
 import { useState, createContext, useEffect } from 'react';
-import { Track } from '../types';
+import { Track, Album } from '../types';
 import Visualizer from './VisualizerComponents/Visualizer';
 import Player from './PlayerComponents/Player';
 import MusicSideBar from './MusicSideBarComponents/MusicSideBar';
@@ -8,36 +8,29 @@ import { getTracks } from '../API/ApiCalls';
 
 
 import '../loader.css'
+import AlbumMusicSideBar from './MusicSideBarComponents/AlbumMusicSideBar';
 
 
-export interface TrackContext {
+export interface AppContextValues {
     tracks: Track[],
+    albums: Album[],
     currentTrackIndex: number
-    setCurrentTrackIndex?: React.Dispatch<React.SetStateAction<number>>
-  }
+    setCurrentTrackIndex?: React.Dispatch<React.SetStateAction<number>>,
+    setTracks?: React.Dispatch<React.SetStateAction<Track[]>>,
+    setErrorState?: React.Dispatch<React.SetStateAction<boolean>>,
+    setAlbums?: React.Dispatch<React.SetStateAction<Album[]>>,
+}
 
-export const TrackContext = createContext<TrackContext>({tracks: [],currentTrackIndex: 0});
+export const AppContext = createContext<AppContextValues>({tracks: [], albums: [], currentTrackIndex: 0});
 
-function TrackContextComponents() {
+function AppContextComponent() {
 
   const [tracks, setTracks] = useState<Track[]>([])
+  const [albums, setAlbums] = useState<Album[]>([])
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [errorState, setErrorState] = useState(false);
+  const [isAlbumMode, setIsAlbumMode] = useState(true);
 
-  useEffect(() => {
-    
-    (async() => {
-      if (tracks.length === 0) {
-        
-        const response = await getTracks()
-        const tracks = response.tracks
-        const errorState= response.errorState
-
-        setTracks(tracks)
-        setErrorState(errorState)
-      }
-    })();
-  }, [])
 
 
   const getButton = (content: string) => { //Button here for testing purposes, hopefully we can get the app to autopopulate on launch
@@ -62,25 +55,27 @@ function TrackContextComponents() {
     }
 
   return (
-    (tracks.length === 0) ? <div className='lds-hourglass'>
-
-    </div>:
+    
     <>
       <NavBar />
-      <TrackContext.Provider value = {{tracks, currentTrackIndex, setCurrentTrackIndex }}>
+      <AppContext.Provider value = {{tracks, albums, currentTrackIndex, setCurrentTrackIndex, setTracks, setErrorState, setAlbums }}>
         <div className='grid-1-item visualizer'>
           <Visualizer />
         </div>
         <div className='grid-1-item music-sidebar-container'>
-          <MusicSideBar />
+          <button onClick={() => setIsAlbumMode(!isAlbumMode)}>
+            Swap
+          </button>
+          {isAlbumMode ? <AlbumMusicSideBar/> : <MusicSideBar/>}
+          
         </div>
         <div className='grid-1-item player-container'>
           <Player />
         </div>
-      </TrackContext.Provider>
+      </AppContext.Provider>
     </>
 
   )
 }
 
-export default TrackContextComponents
+export default AppContextComponent

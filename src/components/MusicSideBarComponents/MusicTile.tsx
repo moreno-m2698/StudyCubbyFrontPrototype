@@ -1,18 +1,18 @@
 //Will need author, song name, and image
 import { Track } from '../../types';
 import { useContext } from "react"
-import { TrackContext } from "../TrackContextComponent"
+import { AppContext } from "../AppContextComponent"
+
 
 interface MusicTileProps {
     track: Track
 }
 
 
-
 function MusicTile(props: MusicTileProps) {
 
 
-    const {currentTrackIndex, setCurrentTrackIndex} = useContext(TrackContext)
+    const {currentTrackIndex, setCurrentTrackIndex} = useContext(AppContext)
 
     return (
         <> 

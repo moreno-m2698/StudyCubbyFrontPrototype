@@ -2,11 +2,11 @@ import { useContext } from 'react';
 import SkipBackwardButton from './ButtonComponents/SkipBackwardButton'
 import SkipForwardButton from './ButtonComponents/SkipForwardButton'
 import PlayButton from './ButtonComponents/PlayButton'
-import { TrackContext } from '../TrackContextComponent';
+import { AppContext } from '../AppContextComponent';
 
 function Controls() {
 
-    const {tracks, currentTrackIndex, setCurrentTrackIndex} = useContext(TrackContext)
+    const {tracks, currentTrackIndex, setCurrentTrackIndex} = useContext(AppContext)
 
     const SkipTrack = (forwards = true) => {
         if (setCurrentTrackIndex  !== undefined) {

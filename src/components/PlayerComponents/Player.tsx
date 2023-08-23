@@ -1,7 +1,7 @@
 import {useState, useRef, useEffect, useContext, createContext} from 'react'
 import Controls from './Controls';
 import Details from './Details';
-import { TrackContext } from '../TrackContextComponent';
+import { AppContext } from '../AppContextComponent';
 
 
 
@@ -21,7 +21,7 @@ function Player() {
     //Also allows us to specifically target and reveference the audio element
     //Spotify is probably using websockets to stream audio since I cannot find the audio tag
 
-    const {tracks, currentTrackIndex} = useContext(TrackContext) //Context is received from TrackContextComponent
+    const {tracks, currentTrackIndex} = useContext(AppContext) //Context is received from TrackContextComponent
 
     const [isPlaying, setIsPlaying] = useState(false); //Used to determine if the audio is playing
  
@@ -39,11 +39,15 @@ function Player() {
 
     return (
         <PlayerContext.Provider value={{isPlaying, setIsPlaying}}>
+                {(tracks.length === 0) ? null :
+                <>
                 <audio src={tracks[currentTrackIndex].audio} ref={audioElement}></audio>
                 <Details/>
                 <Controls/>
                 <div className='player-placeholder'>
-                </div>            
+                </div>    
+                </>
+                }  
         </PlayerContext.Provider>
     );
 }

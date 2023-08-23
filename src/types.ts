@@ -6,3 +6,11 @@ export interface Track {
     artist: string,
     [key: string]: any
 }
+
+
+export interface Album {
+    id: number,
+    title: string,
+    artist: string,
+    image?: string,
+}

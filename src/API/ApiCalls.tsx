@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Track } from "../types";
+import { Track, Album } from "../types";
 
 
 const getAlbumImage = async (albumId: number) => {
@@ -10,7 +10,7 @@ const getAlbumImage = async (albumId: number) => {
       return imageURL;
     } catch (error) {
       console.log(error);
-      return null;
+      return undefined;
     }
   };
   
@@ -23,7 +23,7 @@ const getAlbumImage = async (albumId: number) => {
       return audioURL;
     } catch (error) {
       console.log(error);
-      return null; // or handle the error in an appropriate way
+      return null; //or handle the error in an appropriate way
     }
   };
 
@@ -65,7 +65,7 @@ const getAlbumImage = async (albumId: number) => {
 export const getTracks = async () => {
     try {
         const trackResponse = await axios.get("http://localhost:3000/track")
-        const singleResponse = await axios.get("http://localhost:3000/single")
+
         for (let i=0; i < trackResponse.data.length; i++) {
 
             const track = trackResponse.data[i];
@@ -75,17 +75,10 @@ export const getTracks = async () => {
             track.audio = await getTrackAudio(track.id);
         }
 
-        for (let i = 0; i < singleResponse.data.length; i++) {
-          const single = singleResponse.data[i];
-          console.log(single)
-          single.audio = await getSingleAudio(single.id);
-          single.image = await getSingleImage(single.id)
-
-        }
-
+        
         const result: getTracksResponse = {
             errorState: false,
-            tracks: [...trackResponse.data, ...singleResponse.data]
+            tracks: [...trackResponse.data]
         }
         return result;
     } catch (error) {
@@ -95,5 +88,28 @@ export const getTracks = async () => {
             tracks: []
         }
       return result;
+    }
+}
+
+export const getAlbums = async () => {
+    try {
+        const albumResponse = await axios.get("http://localhost:3000/album");
+
+        for (let j=0; j < albumResponse.data.length; j++) {
+
+            const album: Album = albumResponse.data[j];
+            
+            album.image = await getAlbumImage(album.id);
+
+            console.log("Album image", album.image);
+
+        }
+
+        
+        return albumResponse.data;
+    } catch (error) {
+
+        console.log(error);
+        return [];
     }
 }

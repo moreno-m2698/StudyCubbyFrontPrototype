@@ -1,9 +1,9 @@
-import TrackContextComponents from '../components/TrackContextComponent'
+import AppContextComponents from '../components/AppContextComponent'
 
 function Home() {
   return (
     <div className="grid-container-1">
-        <TrackContextComponents />
+        <AppContextComponents />
     </div>
   )
 }
