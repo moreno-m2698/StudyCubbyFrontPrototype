@@ -2,18 +2,18 @@
 import {Route, Routes, Link } from "react-router-dom";
 import Upload from "./routes/Upload";
 import Home from "./routes/Home";
-// const exampleSong: Track = {
-//   title: "Welcome to the Pooh Corner",
-//   artist: "Sephiroth",
-//   src: "",
-//   image_src: "https://cdn.discordapp.com/attachments/709251252311031860/1081072843502125066/Sin.png"
-// }
+import AccordionTest from "./components/AccordionTest";
+
 
 function App() {
 
+    const test= true;
+
     return (
+        
     <>
-    
+        
+        {(!test) ? <div>
         <nav>
             <ul>
                 <li>
@@ -28,6 +28,9 @@ function App() {
             <Route path="/" element={<Home />}/>
             <Route path="/upload" element={<Upload />}/>
         </Routes >
+        </div>
+        : <AccordionTest/> }
+        
     </>
     );
 
