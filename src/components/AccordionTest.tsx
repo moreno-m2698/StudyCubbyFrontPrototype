@@ -4,6 +4,15 @@ import "../accordionTest.css"
 
 function AccordionTest() {
 
+    const [selected, setSelected] = useState(null)
+
+    const toggle = (i) => {
+        if (selected === i) {
+            return setSelected(null)
+        }
+        setSelected(i)
+    }
+
 
     const stuff: any = [
         {   
@@ -23,7 +32,7 @@ function AccordionTest() {
         <div className='accordion'>
             {stuff.map((item, index) => (
                 <div className='item'>
-                    <div className='title'>
+                    <div className='title' onClick={() => toggle(i)}>
                         <h1>{item.header}</h1>
                         <span>+</span>
                     </div>
