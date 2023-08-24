@@ -1,7 +1,9 @@
 //Will need author, song name, and image
+import { useState } from 'react';
 import { Album } from '../../types';
 import { useContext } from "react"
 import { AppContext } from "../AppContextComponent"
+import { getAlbumTracks } from '../../API/ApiCalls';
 
 
 interface AlbumAccordionProps {
@@ -12,14 +14,27 @@ interface AlbumAccordionProps {
 
 function AlbumAccordion(props: AlbumAccordionProps) {
 
+    const [albumTracks, setAlbumTracks] = useState([]);
+
+    useEffect(() => {
+        (async() => {
+            if (albumTracks.length === 0 && setAlbumTracks !== undefined) {
+                const response = await getAlbumTracks(props.album.id);
+
+                return
+            }
+        })
+    })
 
     
 
     return (
         <> 
-            <li className="music-tile-list-item" key={props.album.id} onClick={() => {
-                
-                }}>
+            <div className='album-tile'>
+                <div>
+
+                </div>
+            </div>
                 <div className='music-tile-image'>
                     <img src={props.album.image} alt={props.album.title}/>
                 </div>
@@ -36,7 +51,7 @@ function AlbumAccordion(props: AlbumAccordionProps) {
                         <span>{props.album.artist}</span>
                     </div>
                 </div>
-            </li>
+
         </>
     )
 

@@ -14,6 +14,27 @@ const getAlbumImage = async (albumId: number) => {
     }
   };
   
+export const getAlbumTracks = async(albumId: number) => {
+  try {
+    const tracksResponse = await axios.get(`http://localhost:3000/album/tracks/${albumId}`, { responseType: "blob" });
+
+    for (let i = 0; i < tracksResponse.data.length; i++ ) {
+      
+      const track = tracksResponse.data[i];
+      track.audio = await getTrackAudio(track.id);
+
+    }
+    
+    return tracksResponse.data;
+
+    } catch (error) {
+        console.log(error);
+    }
+  
+  }
+
+
+
 
   const getTrackAudio = async (trackID: number) => {
     try {

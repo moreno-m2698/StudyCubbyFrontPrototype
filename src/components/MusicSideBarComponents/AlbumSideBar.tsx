@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react"
+import { useContext, useEffect, useState } from "react"
 import { AppContext } from "../AppContextComponent.tsx"
 import AlbumAccordion from "./AlbumAccordion.tsx"
 import { Album } from "../../types.ts"
@@ -9,8 +9,10 @@ function AlbumSideBar() {
 
     //Should have a scroll feature
     //Need to have sound tiles being made change song if they are clicked
+    
 
     const {albums, setAlbums} = useContext(AppContext)
+    const [selected, setSelected] = useState<number|null>(null);
 
     useEffect(() => {
         (async() => {
@@ -27,11 +29,18 @@ function AlbumSideBar() {
     }
     ,[])
 
+    const accordionToggle = (index: number|null) => {
+        if (selected === index) {
+            return setSelected(null)
+        }
+        setSelected(index);
+    }
+
 
     return (
-        <ul>
+        <div className="album-accordion">
             {albums?.map((album:Album, index) => <AlbumAccordion key={index} album={album}/>)}
-        </ul>
+        </div>
     )
 }
 
