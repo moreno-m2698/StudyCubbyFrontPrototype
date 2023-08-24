@@ -4,13 +4,13 @@ import { useContext } from "react"
 import { AppContext } from "../AppContextComponent"
 
 
-interface AlbumTileProps {
+interface AlbumAccordionProps {
     album: Album
 
 }
 
 
-function AlbumMusicTile(props: AlbumTileProps) {
+function AlbumAccordion(props: AlbumAccordionProps) {
 
 
     
@@ -42,4 +42,4 @@ function AlbumMusicTile(props: AlbumTileProps) {
 
 }
 
-export default AlbumMusicTile
+export default AlbumAccordion

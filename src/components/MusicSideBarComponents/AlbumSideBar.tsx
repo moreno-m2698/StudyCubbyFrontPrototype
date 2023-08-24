@@ -1,11 +1,11 @@
 import { useContext, useEffect } from "react"
 import { AppContext } from "../AppContextComponent.tsx"
-import AlbumMusicTile from "./AlbumMusicTile"
+import AlbumAccordion from "./AlbumAccordion.tsx"
 import { Album } from "../../types.ts"
-import { getAlbums } from '../../API/ApiCalls';
+import { getAlbums } from '../../API/ApiCalls.tsx';
 
 
-function AlbumMusicSideBar() {
+function AlbumSideBar() {
 
     //Should have a scroll feature
     //Need to have sound tiles being made change song if they are clicked
@@ -30,9 +30,9 @@ function AlbumMusicSideBar() {
 
     return (
         <ul>
-            {albums?.map((album:Album, index) => <AlbumMusicTile key={index} album={album}/>)}
+            {albums?.map((album:Album, index) => <AlbumAccordion key={index} album={album}/>)}
         </ul>
     )
 }
 
-export default AlbumMusicSideBar
+export default AlbumSideBar

@@ -8,7 +8,7 @@ import { getTracks } from '../API/ApiCalls';
 
 
 import '../loader.css'
-import AlbumMusicSideBar from './MusicSideBarComponents/AlbumMusicSideBar';
+import AlbumSideBar from './MusicSideBarComponents/AlbumSideBar';
 
 
 export interface AppContextValues {
@@ -66,7 +66,7 @@ function AppContextComponent() {
           <button onClick={() => setIsAlbumMode(!isAlbumMode)}>
             Swap
           </button>
-          {isAlbumMode ? <AlbumMusicSideBar/> : <MusicSideBar/>}
+          {isAlbumMode ? <AlbumSideBar/> : <MusicSideBar/>}
           
         </div>
         <div className='grid-1-item player-container'>
