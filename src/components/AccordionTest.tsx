@@ -32,9 +32,9 @@ function AccordionTest() {
         <div className='accordion'>
             {stuff.map((item, index) => (
                 <div className='item'>
-                    <div className='title' onClick={() => toggle(i)}>
+                    <div className='title' onClick={() => toggle(index)}>
                         <h1>{item.header}</h1>
-                        <span>+</span>
+                        <span>{selected === index ? '-' : '+' }</span>
                     </div>
                     <div className='content'>
                         {item.text}
