@@ -1,5 +1,5 @@
 //Will need author, song name, and image
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Album } from '../../types';
 import { useContext } from "react"
 import { AppContext } from "../AppContextComponent"
@@ -20,11 +20,12 @@ function AlbumAccordion(props: AlbumAccordionProps) {
         (async() => {
             if (albumTracks.length === 0 && setAlbumTracks !== undefined) {
                 const response = await getAlbumTracks(props.album.id);
+                console.log(response)
 
-                return
+                setAlbumTracks(response)
             }
         })
-    })
+    }, []);
 
     
 
