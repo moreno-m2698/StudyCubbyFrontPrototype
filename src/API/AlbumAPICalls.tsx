@@ -26,8 +26,6 @@ export const getAlbums = async () => {
             
             album.image = await getAlbumImage(album.id);
 
-            console.log("Album image", album.image);
-
         }
 
         
