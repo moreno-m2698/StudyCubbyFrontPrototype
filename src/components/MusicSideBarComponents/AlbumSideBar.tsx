@@ -39,7 +39,7 @@ function AlbumSideBar() {
 
     return (
         <div className="album-accordion">
-            {albums?.map((album:Album, index) => <AlbumAccordion key={index} album={album}/>)}
+            {albums?.map((album:Album, index) => <AlbumAccordion key={index} album={album} accordionToggle={accordionToggle} selected={selected}/>)}
         </div>
     )
 }

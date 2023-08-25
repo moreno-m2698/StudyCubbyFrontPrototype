@@ -7,6 +7,8 @@ import { AppContext } from "../AppContextComponent";
 
 interface AlbumAccordionProps {
     album: Album
+    accordionToggle: any
+    selected: number|null
 
 }
 
@@ -14,18 +16,9 @@ interface AlbumAccordionProps {
 function AlbumAccordion(props: AlbumAccordionProps) {
 
     const [albumTracks, setAlbumTracks] = useState([]);
+    const tracks = props.album.tracks
 
-    useEffect(() => {
-        (async() => {
-            if (albumTracks.length === 0 && setAlbumTracks !== undefined) {
-            //     const response = await getAlbumTracks(props.album.id);
-            //     console.log(response)
-
-            //     setAlbumTracks(response)
-            return null
-            }
-        })
-    }, []);
+  
 
     
 
@@ -33,7 +26,18 @@ function AlbumAccordion(props: AlbumAccordionProps) {
         <> 
             <div className='album-tile'>
                 <div>
+                    {tracks.map((track, index) => {
+                        <div className='item'>
+                        <div className='title' onClick={() => props.accordionToggle(index)}>
+                            <h1>{track.title}</h1>
+                            <span>{props.selected === index ? '-' : '+' }</span>
+                        </div>
+                        <div className={props.selected === index? 'content show' : 'content'}>
+                            {track.artist}
+                        </div>
+                    </div>
 
+                    })}
                 </div>
             </div>
                 <div className='music-tile-image'>
