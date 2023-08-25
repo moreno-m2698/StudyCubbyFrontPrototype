@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { AppContext } from "../AppContextComponent.tsx"
 import AlbumAccordion from "./AlbumAccordion.tsx"
 import { Album } from "../../types.ts"
-import { getAlbums } from '../../API/ApiCalls.tsx';
+import { getAlbums } from '../../API/AlbumAPICalls.tsx';
 
 
 function AlbumSideBar() {
