@@ -14,6 +14,16 @@ const getAlbumImage = async (albumId: number) => {
     }
   };
   
+const getAlbumTracks = async (albumId: number) => {
+    try {
+        const tracksResponse = await axios.get(`http://localhost:3000/album/tracks/${albumId}`);
+        console.log(tracksResponse.data)
+    } catch (error) {
+        console.error(`There was an error accessing the album - ${albumId} tracks`, error)
+    }
+}
+
+
 
 
 export const getAlbums = async () => {
@@ -25,6 +35,7 @@ export const getAlbums = async () => {
             const album: Album = albumResponse.data[j];
             
             album.image = await getAlbumImage(album.id);
+            album.tracks = await getAlbumTracks(album.id);
 
         }
 

@@ -26,7 +26,7 @@ export const getAlbumTracks = async(albumId: number) => {
   }
 
 
-  const getTrackAudio = async (trackID: number) => {
+  export const getTrackAudio = async (trackID: number) => {
     try {
       const audioResponse = await axios.get(`http://localhost:3000/track/play/${trackID}`, { responseType: "blob" });
       let audioBlob = new Blob([audioResponse.data], { type: "audio/mpeg" });
