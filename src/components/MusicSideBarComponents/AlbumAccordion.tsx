@@ -15,7 +15,7 @@ interface AlbumAccordionProps {
 
 function AlbumAccordion(props: AlbumAccordionProps) {
 
-    const [albumTracks, setAlbumTracks] = useState([]);
+    const [albumTracks, setAlbumTracks] = useState([...props.album.tracks]);
     const tracks = props.album.tracks
 
   
@@ -26,7 +26,7 @@ function AlbumAccordion(props: AlbumAccordionProps) {
         <> 
             <div className='album-tile'>
                 <div>
-                    {tracks.map((track, index) => {
+                    {albumTracks.map((track, index) => (
                         <div className='item'>
                         <div className='title' onClick={() => props.accordionToggle(index)}>
                             <h1>{track.title}</h1>
@@ -37,7 +37,7 @@ function AlbumAccordion(props: AlbumAccordionProps) {
                         </div>
                     </div>
 
-                    })}
+                    ))}
                 </div>
             </div>
                 <div className='music-tile-image'>
