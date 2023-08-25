@@ -19,10 +19,11 @@ function AlbumAccordion(props: AlbumAccordionProps) {
     useEffect(() => {
         (async() => {
             if (albumTracks.length === 0 && setAlbumTracks !== undefined) {
-                const response = await getAlbumTracks(props.album.id);
-                console.log(response)
+            //     const response = await getAlbumTracks(props.album.id);
+            //     console.log(response)
 
-                setAlbumTracks(response)
+            //     setAlbumTracks(response)
+            return null
             }
         })
     }, []);

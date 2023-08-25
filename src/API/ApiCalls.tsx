@@ -25,6 +25,8 @@ export const getAlbumTracks = async(albumId: number) => {
 
     }
     
+    console.log(tracksResponse.data)
+
     return tracksResponse.data;
 
     } catch (error) {
@@ -121,6 +123,7 @@ export const getAlbums = async () => {
             const album: Album = albumResponse.data[j];
             
             album.image = await getAlbumImage(album.id);
+            album.tracks = await getAlbumTracks(album.id);
 
             console.log("Album image", album.image);
 
