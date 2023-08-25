@@ -45,6 +45,8 @@ export const getAlbums = async () => {
             const album: Album = albumResponse.data[j];
             
             album.image = await getAlbumImage(album.id);
+
+            //Will eventually need to move this function out so that we can lazy load tracks inside of the accordion
             album.tracks = await getAlbumTracks(album.id);
 
         }

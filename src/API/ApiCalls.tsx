@@ -1,31 +1,6 @@
 import axios from "axios";
 import { Track, Album } from "../types";
 
-
-export const getAlbumTracks = async(albumId: number) => {
-  try {
-    const tracksResponse = await axios.get(`http://localhost:3000/album/tracks/${albumId}`, { responseType: "blob" });
-    
-
-    for (let i = 0; i < tracksResponse.data.length; i++ ) {
-      
-      const track = tracksResponse.data[i];
-      console.log(track)
-      track.audio = await getTrackAudio(track.id);
-
-    }
-    
-  
-
-    return tracksResponse.data;
-
-    } catch (error) {
-        console.log(error);
-    }
-  
-  }
-
-
   export const getTrackAudio = async (trackID: number) => {
     try {
       const audioResponse = await axios.get(`http://localhost:3000/track/play/${trackID}`, { responseType: "blob" });

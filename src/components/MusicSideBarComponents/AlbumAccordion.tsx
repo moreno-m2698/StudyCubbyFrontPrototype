@@ -1,9 +1,8 @@
 //Will need author, song name, and image
 import { useState, useEffect } from 'react';
 import { Album } from '../../types';
-import { useContext } from "react"
-import { AppContext } from "../AppContextComponent"
-import { getAlbumTracks } from '../../API/ApiCalls';
+import { useContext } from "react";
+import { AppContext } from "../AppContextComponent";
 
 
 interface AlbumAccordionProps {
