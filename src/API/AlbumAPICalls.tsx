@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Track, Album } from "../types";
+import { getTrackAudio } from "./ApiCalls";
 
 
 const getAlbumImage = async (albumId: number) => {
@@ -18,6 +19,15 @@ const getAlbumTracks = async (albumId: number) => {
     try {
         const tracksResponse = await axios.get(`http://localhost:3000/album/tracks/${albumId}`);
         console.log(tracksResponse.data)
+        for (let i=0; i < tracksResponse.data.length; i++) {
+            let track = tracksResponse.data[i];
+            track.audio = await getTrackAudio(track.id);
+        }
+        
+        const result = tracksResponse.data;
+        return result
+
+
     } catch (error) {
         console.error(`There was an error accessing the album - ${albumId} tracks`, error)
     }
