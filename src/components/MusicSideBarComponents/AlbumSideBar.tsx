@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { AppContext } from "../AppContextComponent.tsx"
-import AlbumAccordion from "./AlbumAccordion.tsx"
+import AlbumAccordion from "./AlbumAccordionHolder.tsx"
 import { Album } from "../../types.ts"
 import { getAlbums } from '../../API/AlbumAPICalls.tsx';
 
@@ -39,7 +39,38 @@ function AlbumSideBar() {
 
     return (
         <div className="album-accordion">
-            {albums?.map((album:Album, index) => <AlbumAccordion key={index} album={album} accordionToggle={accordionToggle} selected={selected}/>)}
+            <ul>
+                {albums?.map((album:Album, index) => 
+                    <li className='sidebar-item' key={index} onClick={() => accordionToggle(index)}>
+                        <div className='music-tile-image'>
+                            <img src={album.image} alt={album.title}/>
+                        </div>
+                        <div className="sidebar-item-info-container">
+                            <div className="music-tile-title">
+                                <a role="button" title={album.title}>
+                                    <span>
+                                        {album.title}
+                                    </span>
+                                </a>
+                            </div>
+                            <div className="music-tile-author">
+                                <span>{album.artist}</span>
+                            </div>
+
+                            {/*This is the toggle information*/}
+
+                            <div className={selected === index? 'content show' : 'content'}>
+                                {album.tracks.map((song) => (
+                                    <div>
+                                        {song.title}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </li>
+                
+                )}
+            </ul>
         </div>
     )
 }

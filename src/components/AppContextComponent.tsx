@@ -62,7 +62,7 @@ function AppContextComponent() {
         <div className='grid-1-item visualizer'>
           <Visualizer />
         </div>
-        <div className='grid-1-item music-sidebar-container'>
+        <div className='grid-1-item player-sidebar-container'>
           <button onClick={() => setIsAlbumMode(!isAlbumMode)}>
             Swap
           </button>

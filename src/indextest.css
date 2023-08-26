@@ -15,7 +15,7 @@
 }
 
 
-.music-sidebar-container {
+.player-sidebar-container {
     grid-column-start: 2;
     grid-column-end: 3;
 
@@ -45,7 +45,7 @@
 
 }
 
-.track-info-container {
+.sidebar-item-info-container {
     display:flex;
     flex-direction: column;
     justify-content: space-between;
@@ -64,7 +64,7 @@
 
 
 
-.music-tile-list-item {
+.sidebar-item {
     display: flex;
     background-color: #1b2559;
     border-radius: 6px;

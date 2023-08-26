@@ -16,7 +16,7 @@ function MusicTile(props: MusicTileProps) {
 
     return (
         <> 
-            <li className="music-tile-list-item" key={props.track.id} onClick={() => {
+            <li className="sidebar-item" key={props.track.id} onClick={() => {
             if (setCurrentTrackIndex !== undefined) {
                 setCurrentTrackIndex(props.track.id -1)
                 console.log(props.track.id)
@@ -27,7 +27,7 @@ function MusicTile(props: MusicTileProps) {
                 <div className='music-tile-image'>
                     <img src={props.track.image} alt={props.track.title}/>
                 </div>
-                <div className="track-info-container">
+                <div className="sidebar-item-info-container">
                     
                     <div className="music-tile-title">
                         <a role="button" title={props.track.title}>
