@@ -3,7 +3,7 @@ import { Track, Album } from "../types";
 import { getTrackAudio } from "./ApiCalls";
 
 
-const getAlbumImage = async (albumId: number) => {
+export const getAlbumImage = async (albumId: number) => {
     try {
       const imageResponse = await axios.get(`http://localhost:3000/album/image/${albumId}`, { responseType: "blob" });
       let imageBlob = new Blob([imageResponse.data], { type: "image/png" });

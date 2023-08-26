@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Track, Album } from "../types";
+import { getAlbumImage } from "./AlbumAPICalls";
 
   export const getTrackAudio = async (trackID: number) => {
     try {

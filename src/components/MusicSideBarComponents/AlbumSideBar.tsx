@@ -55,7 +55,7 @@ function AlbumSideBar() {
                             </div>
                             <div className="music-tile-author">
                                 <span>{album.artist}</span>
-                            </div>
+                            </div>         
 
                             {/*This is the toggle information*/}
 
@@ -65,8 +65,13 @@ function AlbumSideBar() {
                                         {song.title}
                                     </div>
                                 ))}
-                            </div>
+                            </div>                  
                         </div>
+
+                        
+                         
+
+                       
                     </li>
                 
                 )}

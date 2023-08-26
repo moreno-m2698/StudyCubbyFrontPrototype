@@ -16,7 +16,7 @@ function MusicSideBar() {
         (async() => {
             if (tracks.length === 0 && setTracks !== undefined && setErrorState !== undefined) {
               
-              const response = await getTracks()
+              const response = await getTracks();
               const tracks = response.tracks
               const errorState = response.errorState
       
