@@ -29,9 +29,12 @@ function AlbumSideBar() {
     }
     ,[])
 
-    const accordionToggle = (index: number|null) => {
+    const accordionToggle = async (album, index: number|null) => {
         if (selected === index) {
             return setSelected(null)
+        }
+        if (album.tracks===0){
+            console.log('hi')
         }
         setSelected(index);
     }
@@ -41,7 +44,7 @@ function AlbumSideBar() {
         <div className="album-accordion">
             <ul>
                 {albums?.map((album:Album, index) => 
-                    <li className='sidebar-item' key={index} onClick={() => accordionToggle(index)}>
+                    <li className='sidebar-item' key={index} onClick={() => accordionToggle(album, index)}>
                         <div className='music-tile-image'>
                             <img src={album.image} alt={album.title}/>
                         </div>
