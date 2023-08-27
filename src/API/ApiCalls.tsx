@@ -40,6 +40,27 @@ import { getAlbumImage } from "./AlbumAPICalls";
     
   }
 
+const getSingle = async () => {
+  try {
+    const singleResponse = await axios.get("http://localhost:3000/single");
+    
+    for (let i = 0; i < singleResponse.data.length; i++) {
+      const single = singleResponse.data[i]
+
+      single.image = await getSingleImage(single.id)
+      single.audio = await getSingleAudio(single.id)
+
+    }
+
+    return singleResponse.data
+
+  } catch (error) {
+    console.error("There was an issue access singles", error);
+    return []
+  }
+}
+
+
 
 
   interface getTracksResponse {
