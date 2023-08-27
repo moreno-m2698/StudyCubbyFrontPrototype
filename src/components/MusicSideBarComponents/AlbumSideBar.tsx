@@ -21,10 +21,10 @@ function AlbumSideBar() {
                 const response = await getAlbums();
                 
                 const newAlbums = response
-                for (let i = 0; i < newAlbums.length; i++) {
-                    let album = newAlbums[i];
-                    album.tracks =  await getAlbumTracks(album.id);
-                }
+                // for (let i = 0; i < newAlbums.length; i++) {
+                //     let album = newAlbums[i];
+                //     album.tracks =  await getAlbumTracks(album.id);
+                // }
                 
 
                 setAlbums(newAlbums)
@@ -34,13 +34,23 @@ function AlbumSideBar() {
     }
     ,[])
 
-    const accordionToggle = async (album, index: number|null) => {
+    const accordionToggle = async (index: number) => {
+        
+        const album = albums[index]
+
+
         if (selected === index) {
             return setSelected(null)
         }
-        if (album.tracks===0){
-            console.log('hi')
+        if (!album.tracks) {
+            console.log(!album.tracks)
+            const trackResponse = await getAlbumTracks(album.id);
+
+            album.tracks = trackResponse
+            console.log(album.tracks)
+            setAlbums(albums);
         }
+        console.log("An album has been selected", album.title)
         setSelected(index);
     }
 
@@ -49,7 +59,7 @@ function AlbumSideBar() {
         <div className="album-accordion">
             <ul>
                 {albums?.map((album:Album, index) => 
-                    <li className='sidebar-item' key={index} onClick={() => accordionToggle(album, index)}>
+                    <li className='sidebar-item' key={index} onClick={() => accordionToggle(index)}>
                         <div className='music-tile-image'>
                             <img src={album.image} alt={album.title}/>
                         </div>
@@ -73,7 +83,7 @@ function AlbumSideBar() {
                                         {song.title}
                                     </div>
                                 ))}
-                            </div>                  
+                                </div>           
                         </div>
 
                         
