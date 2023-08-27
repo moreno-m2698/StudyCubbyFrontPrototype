@@ -59,10 +59,6 @@ const getSingle = async () => {
     return []
   }
 }
-
-
-
-
   interface getTracksResponse {
     errorState: boolean
     tracks: Track[]
@@ -77,8 +73,6 @@ export const getTracks = async () => {
         for (let i=0; i < trackResponse.data.length; i++) {
 
             const track = trackResponse.data[i];
-
-
             track.image = await getAlbumImage(track.albumId);
             track.audio = await getTrackAudio(track.id);
         }
