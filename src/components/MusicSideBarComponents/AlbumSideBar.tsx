@@ -44,15 +44,12 @@ function AlbumSideBar() {
             return setSelected(null)
         }
         if (!album.tracks) {
-            console.log(!album.tracks)
             const trackResponse = await getAlbumTracks(album.id);
 
             album.tracks = trackResponse
-            console.log(album.tracks)
             setAlbums(albums);
         }
-        console.log("An album has been selected", album.title)
-        console.log("The selected is now", index)
+
         setSelected(index);
     }
 

@@ -5,7 +5,8 @@ export interface Track {
     albumId: number,
     artist: string,
     [key: string]: any,
-    index: number
+    index: number,
+    playerId: string|null
 }
 
 

@@ -31,7 +31,7 @@ function MusicSideBar() {
 
     return (
         <ul>
-            {tracks.map( (track:Track, index) => <MusicTile key={index} track={track}/>)}
+            {tracks.map((track:Track, index) => <MusicTile track={track} key={track.id} trackIndex={index}/>)}
         </ul>
     )
 }
