@@ -15,7 +15,7 @@ export const getAlbumImage = async (albumId: number) => {
     }
   };
   
-const getAlbumTracks = async (albumId: number) => {
+export const getAlbumTracks = async (albumId: number) => {
     try {
         const tracksResponse = await axios.get(`http://localhost:3000/album/tracks/${albumId}`);
         console.log(tracksResponse.data)
@@ -33,9 +33,6 @@ const getAlbumTracks = async (albumId: number) => {
     }
 }
 
-
-
-
 export const getAlbums = async () => {
     try {
         const albumResponse = await axios.get("http://localhost:3000/album");
@@ -47,7 +44,6 @@ export const getAlbums = async () => {
             album.image = await getAlbumImage(album.id);
 
             //Will eventually need to move this function out so that we can lazy load tracks inside of the accordion
-            album.tracks = await getAlbumTracks(album.id);
 
         }
 

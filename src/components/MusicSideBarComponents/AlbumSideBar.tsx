@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react"
 import { AppContext } from "../AppContextComponent.tsx"
-import AlbumAccordion from "./AlbumAccordionHolder.tsx"
 import { Album } from "../../types.ts"
-import { getAlbums } from '../../API/AlbumAPICalls.tsx';
+import { getAlbums, getAlbumTracks } from '../../API/AlbumAPICalls.tsx';
+
 
 
 function AlbumSideBar() {
@@ -18,10 +18,15 @@ function AlbumSideBar() {
         (async() => {
             if (albums.length === 0 && setAlbums !== undefined) {
               
-                const response = await getAlbums()
+                const response = await getAlbums();
                 
                 const newAlbums = response
-        
+                for (let i = 0; i < newAlbums.length; i++) {
+                    let album = newAlbums[i];
+                    album.tracks =  await getAlbumTracks(album.id);
+                }
+                
+
                 setAlbums(newAlbums)
 
             }
