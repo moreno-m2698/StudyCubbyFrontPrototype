@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { AppContext } from "../AppContextComponent.tsx"
 import { Album } from "../../types.ts"
 import { getAlbums, getAlbumTracks } from '../../API/AlbumAPICalls.tsx';
+import AlbumUnfoldComponent from "./AlbumUnfoldComponent.tsx";
 
 
 
@@ -77,21 +78,9 @@ function AlbumSideBar() {
 
                             {/*This is the toggle information*/}
 
-                            <div className={selected === index? 'content show' : 'content'}>
-                                {album.tracks.map((song) => (
-                                    <div>
-                                        {song.title}
-                                    </div>
-                                ))}
-                                </div>           
-                        </div>
-
-                        
-                         
-
-                       
+                            {!album.tracks ? null : <AlbumUnfoldComponent tracks={album.tracks} albumIndex={index} selectedIndex={selected}/>} 
+                        </div> 
                     </li>
-                
                 )}
             </ul>
         </div>
