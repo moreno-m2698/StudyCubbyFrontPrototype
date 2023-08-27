@@ -2,7 +2,7 @@
 import {Route, Routes, Link } from "react-router-dom";
 import Upload from "./routes/Upload";
 import Home from "./routes/Home";
-import AccordionTest from "./components/AccordionTest";
+
 
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
             <Route path="/upload" element={<Upload />}/>
         </Routes >
         </div>
-        : <AccordionTest/> }
+        : null }
         
     </>
     );

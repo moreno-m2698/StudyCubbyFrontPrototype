@@ -52,6 +52,7 @@ function AlbumSideBar() {
             setAlbums(albums);
         }
         console.log("An album has been selected", album.title)
+        console.log("The selected is now", index)
         setSelected(index);
     }
 
