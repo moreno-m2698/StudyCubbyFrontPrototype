@@ -77,10 +77,12 @@ export const getTracks = async () => {
             track.audio = await getTrackAudio(track.id);
         }
 
+        const singleResponse = await getSingle();
+
         
         const result: getTracksResponse = {
             errorState: false,
-            tracks: [...trackResponse.data]
+            tracks: [...trackResponse.data, ...singleResponse]
         }
         return result;
     } catch (error) {

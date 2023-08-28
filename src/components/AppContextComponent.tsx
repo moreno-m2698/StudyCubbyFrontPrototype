@@ -25,12 +25,12 @@ export const AppContext = createContext<AppContextValues>({tracks: [], albums: [
 
 function AppContextComponent() {
 
-  const [tracks, setTracks] = useState<Track[]>([])
-  const [albums, setAlbums] = useState<Album[]>([])
+  const [tracks, setTracks] = useState<Track[]>([]);
+  const [albums, setAlbums] = useState<Album[]>([]);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [errorState, setErrorState] = useState(false);
   const [isAlbumMode, setIsAlbumMode] = useState(true);
-
+  const [queue, setQueue] = useState<Track[]>([]);
 
 
   const getButton = (content: string) => { //Button here for testing purposes, hopefully we can get the app to autopopulate on launch
