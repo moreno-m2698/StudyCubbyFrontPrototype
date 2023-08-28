@@ -44,7 +44,7 @@ function AlbumSideBar() {
             return setSelected(null)
         }
         if (!album.tracks) {
-            const trackResponse = await getAlbumTracks(album.id);
+            const trackResponse = await getAlbumTracks(album.id, album.image);
 
             album.tracks = trackResponse
             setAlbums(albums);

@@ -15,12 +15,13 @@ export const getAlbumImage = async (albumId: number) => {
     }
   };
   
-export const getAlbumTracks = async (albumId: number) => {
+export const getAlbumTracks = async (albumId: number, trackImage: string) => {
     try {
         const tracksResponse = await axios.get(`http://localhost:3000/album/tracks/${albumId}`);
         for (let i=0; i < tracksResponse.data.length; i++) {
             let track = tracksResponse.data[i];
             track.audio = await getTrackAudio(track.id);
+            track.image = trackImage
         }
         
         const result = tracksResponse.data;

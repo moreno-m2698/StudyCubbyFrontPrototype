@@ -1,5 +1,5 @@
 import { useState, createContext } from 'react';
-import { Track, Album } from '../types';
+import { Track, Album, Queue } from '../types';
 import Visualizer from './VisualizerComponents/Visualizer';
 import Player from './PlayerComponents/Player';
 import MusicSideBar from './MusicSideBarComponents/MusicSideBar';

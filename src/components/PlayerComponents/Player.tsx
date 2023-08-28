@@ -21,11 +21,9 @@ function Player() {
     //Also allows us to specifically target and reveference the audio element
     //Spotify is probably using websockets to stream audio since I cannot find the audio tag
 
-    const {tracks, currentTrackIndex} = useContext(AppContext) //Context is received from TrackContextComponent
+    const {tracks, currentTrackIndex} = useContext(AppContext)
 
-    const [isPlaying, setIsPlaying] = useState(false); //Used to determine if the audio is playing
- 
-    //Might end up removing this once I think more about how we are calling tracks and if I want tracks to be strongly attached to their db id.
+    const [isPlaying, setIsPlaying] = useState(false); //Used to determine if the audio is playingS
 
     useEffect(() => { //This effect allows us to have the player still be in play position even if we change tracks.
         if (audioElement.current !== null) {

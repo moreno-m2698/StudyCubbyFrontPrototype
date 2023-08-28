@@ -17,3 +17,8 @@ export interface Album {
     image?: string,
     tracks?: Track[]
 }
+
+export interface Queue {
+    id: string,
+    tracks?: Track[]
+}
