@@ -15,13 +15,15 @@ export interface AppContextValues {
     tracks: Track[],
     albums: Album[],
     currentTrackIndex: number
+    queue: Track[]
     setCurrentTrackIndex?: React.Dispatch<React.SetStateAction<number>>,
     setTracks?: React.Dispatch<React.SetStateAction<Track[]>>,
     setErrorState?: React.Dispatch<React.SetStateAction<boolean>>,
     setAlbums?: React.Dispatch<React.SetStateAction<Album[]>>,
+    setQueue?: React.Dispatch<React.SetStateAction<Track[]>>
 }
 
-export const AppContext = createContext<AppContextValues>({tracks: [], albums: [], currentTrackIndex: 0});
+export const AppContext = createContext<AppContextValues>({tracks: [], albums: [], currentTrackIndex: 0, queue: []});
 
 function AppContextComponent() {
 
@@ -54,16 +56,29 @@ function AppContextComponent() {
       )
     }
 
+  const modeSelector = (playerMode:boolean) => {
+    if (playerMode) {
+      //We are in album mode
+      null
+
+    } else {
+      setQueue(tracks)
+    }
+    setIsAlbumMode(!playerMode)
+  }
+
+
+  
   return (
     
     <>
       <NavBar />
-      <AppContext.Provider value = {{tracks, albums, currentTrackIndex, setCurrentTrackIndex, setTracks, setErrorState, setAlbums }}>
+      <AppContext.Provider value = {{tracks, albums, currentTrackIndex, queue, setCurrentTrackIndex, setTracks, setErrorState, setAlbums, setQueue }}>
         <div className='grid-1-item visualizer'>
           <Visualizer />
         </div>
         <div className='grid-1-item player-sidebar-container'>
-          <button onClick={() => setIsAlbumMode(!isAlbumMode)}>
+          <button onClick={() => modeSelector(isAlbumMode)}>
             Swap
           </button>
           {isAlbumMode ? <AlbumSideBar/> : <MusicSideBar/>}
