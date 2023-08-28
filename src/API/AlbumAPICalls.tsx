@@ -42,7 +42,7 @@ export const getAlbums = async () => {
             const album: Album = albumResponse.data[j];
             
             album.image = await getAlbumImage(album.id);
-            album.queueId = `a${album.id}`
+            album.queueId = 'a'+`${album.id}`
 
         }
 

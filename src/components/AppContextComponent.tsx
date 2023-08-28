@@ -23,7 +23,7 @@ export interface AppContextValues {
     setQueue?: React.Dispatch<React.SetStateAction<Queue>>
 }
 
-export const AppContext = createContext<AppContextValues>({tracks: [], albums: [], currentTrackIndex: 0, queue: []});
+export const AppContext = createContext<AppContextValues>({tracks: [], albums: [], currentTrackIndex: 0, queue: {id: 'none', tracks: []}});
 
 function AppContextComponent() {
 
@@ -32,7 +32,7 @@ function AppContextComponent() {
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [errorState, setErrorState] = useState(false);
   const [isAlbumMode, setIsAlbumMode] = useState(true);
-  const [queue, setQueue] = useState<Queue|null>();
+  const [queue, setQueue] = useState<Queue>({id: 'none', tracks: []});
 
 
   const getButton = (content: string) => { //Button here for testing purposes, hopefully we can get the app to autopopulate on launch

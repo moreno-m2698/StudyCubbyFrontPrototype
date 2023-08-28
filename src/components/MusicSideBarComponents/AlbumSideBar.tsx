@@ -76,7 +76,7 @@ function AlbumSideBar() {
 
                             {/*This is the toggle information*/}
 
-                            {!album.tracks ? null : <AlbumUnfoldComponent tracks={album.tracks} albumIndex={index} selectedIndex={selected}/>} 
+                            {!album.tracks ? null : <AlbumUnfoldComponent queueId={album.queueId} tracks={album.tracks} albumIndex={index} selectedIndex={selected}/>} 
                         </div> 
                     </li>
                 )}
