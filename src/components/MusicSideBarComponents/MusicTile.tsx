@@ -20,9 +20,8 @@ function MusicTile(props: MusicTileProps) {
 
         <li className="sidebar-item"  onClick={() => {
             if (setCurrentTrackIndex !== undefined) {
-                setCurrentTrackIndex(props.track.id - 1)
-                console.log(props.track.id)
-                console.log(currentTrackIndex)
+                setCurrentTrackIndex(props.trackIndex)
+                console.log("You have selected", props.track.title)
             }}}>
             <div className='music-tile-image'>
                 <img src={props.track.image} alt={props.track.title}/>
