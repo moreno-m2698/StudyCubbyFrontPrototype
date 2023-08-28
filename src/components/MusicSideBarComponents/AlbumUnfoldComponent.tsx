@@ -14,8 +14,8 @@ interface AlbumUnfoldProps {
 function AlbumUnfoldComponent(props: AlbumUnfoldProps) {
   return (
     <div className={props.selectedIndex === props.albumIndex ? 'content show' : 'content'}>
-        {props.tracks.map((song) => (
-            <div>
+        {props.tracks.map((song, index) => (
+            <div key={index}>
                 {song.index + 1}
                 {song.title}
                 {song.artist}
