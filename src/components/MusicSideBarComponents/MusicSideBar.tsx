@@ -10,7 +10,7 @@ function MusicSideBar() {
     //Should have a scroll feature
     //Need to have sound tiles being made change song if they are clicked
 
-    const {tracks, setTracks, setErrorState, queue, setQueue} = useContext(AppContext)
+    const {tracks, setTracks, setErrorState, setQueue} = useContext(AppContext)
 
     useEffect(() => {
         (async() => {
@@ -19,9 +19,12 @@ function MusicSideBar() {
               const response = await getTracks();
               const tracks = response.tracks
               const errorState = response.errorState
-                queue.tracks = tracks
-                console.log(queue)
-                setQueue(queue)
+              const trackQueue = {
+                id: "tracks",
+                tracks: tracks
+              }
+
+                setQueue(trackQueue)
               setTracks(tracks)
               setErrorState(errorState)
             }

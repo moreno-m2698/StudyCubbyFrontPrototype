@@ -14,15 +14,26 @@ interface MusicTileProps {
 function MusicTile(props: MusicTileProps) {
 
 
-    const {currentTrackIndex, setCurrentTrackIndex, queue} = useContext(AppContext)
+    const {currentTrackIndex, setCurrentTrackIndex, tracks, queue, setQueue} = useContext(AppContext)
+
+    const selectTrack = () => {
+        if (queue.id !== "tracks") {
+            const trackQueue = {
+                id: "tracks",
+                tracks: tracks
+            }
+            setQueue(trackQueue)
+        }
+        if (setCurrentTrackIndex !== undefined) {
+            setCurrentTrackIndex(props.trackIndex)
+        }
+    }
+
+
 
     return (
 
-        <li className="sidebar-item"  onClick={() => {
-            if (setCurrentTrackIndex !== undefined) {
-                setCurrentTrackIndex(props.trackIndex)
-                console.log("You have selected", props.track.title)
-            }}}>
+        <li className="sidebar-item"  onClick={() => selectTrack()}>
             <div className='music-tile-image'>
                 <img src={props.track.image} alt={props.track.title}/>
             </div>

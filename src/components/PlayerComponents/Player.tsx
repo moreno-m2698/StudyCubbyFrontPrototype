@@ -25,6 +25,8 @@ function Player() {
 
     const [isPlaying, setIsPlaying] = useState(false); //Used to determine if the audio is playingS
 
+    
+
     useEffect(() => { //This effect allows us to have the player still be in play position even if we change tracks.
         if (audioElement.current !== null) {
             if (isPlaying) {

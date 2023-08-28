@@ -59,13 +59,8 @@ function AppContextComponent() {
   const modeSelector = (playerMode:boolean) => {
     if (!playerMode) {
       //We are in album mode
-      setQueue(null);
+
     } else {
-      const trackQueue: Queue = {
-        id: "tracks",
-        tracks: tracks
-      }
-      setQueue(trackQueue);
     }
     setIsAlbumMode(!playerMode)
   }
