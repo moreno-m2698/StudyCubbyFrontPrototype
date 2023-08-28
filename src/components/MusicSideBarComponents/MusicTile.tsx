@@ -14,7 +14,7 @@ interface MusicTileProps {
 function MusicTile(props: MusicTileProps) {
 
 
-    const {currentTrackIndex, setCurrentTrackIndex} = useContext(AppContext)
+    const {currentTrackIndex, setCurrentTrackIndex, queue} = useContext(AppContext)
 
     return (
 

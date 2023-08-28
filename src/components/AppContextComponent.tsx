@@ -15,12 +15,12 @@ export interface AppContextValues {
     tracks: Track[],
     albums: Album[],
     currentTrackIndex: number
-    queue: Track[]
+    queue: Queue
     setCurrentTrackIndex?: React.Dispatch<React.SetStateAction<number>>,
     setTracks?: React.Dispatch<React.SetStateAction<Track[]>>,
     setErrorState?: React.Dispatch<React.SetStateAction<boolean>>,
     setAlbums?: React.Dispatch<React.SetStateAction<Album[]>>,
-    setQueue?: React.Dispatch<React.SetStateAction<Track[]>>
+    setQueue?: React.Dispatch<React.SetStateAction<Queue>>
 }
 
 export const AppContext = createContext<AppContextValues>({tracks: [], albums: [], currentTrackIndex: 0, queue: []});
@@ -32,7 +32,7 @@ function AppContextComponent() {
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [errorState, setErrorState] = useState(false);
   const [isAlbumMode, setIsAlbumMode] = useState(true);
-  const [queue, setQueue] = useState<Track[]>([]);
+  const [queue, setQueue] = useState<Queue|null>();
 
 
   const getButton = (content: string) => { //Button here for testing purposes, hopefully we can get the app to autopopulate on launch
@@ -57,12 +57,15 @@ function AppContextComponent() {
     }
 
   const modeSelector = (playerMode:boolean) => {
-    if (playerMode) {
+    if (!playerMode) {
       //We are in album mode
-      null
-
+      setQueue(null);
     } else {
-      setQueue(tracks)
+      const trackQueue: Queue = {
+        id: "tracks",
+        tracks: tracks
+      }
+      setQueue(trackQueue);
     }
     setIsAlbumMode(!playerMode)
   }

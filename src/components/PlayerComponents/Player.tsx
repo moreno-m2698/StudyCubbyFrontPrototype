@@ -21,7 +21,7 @@ function Player() {
     //Also allows us to specifically target and reveference the audio element
     //Spotify is probably using websockets to stream audio since I cannot find the audio tag
 
-    const {tracks, currentTrackIndex} = useContext(AppContext)
+    const {tracks, currentTrackIndex, queue} = useContext(AppContext)
 
     const [isPlaying, setIsPlaying] = useState(false); //Used to determine if the audio is playingS
 

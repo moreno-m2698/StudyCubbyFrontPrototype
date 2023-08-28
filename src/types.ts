@@ -18,7 +18,7 @@ export interface Album {
     tracks?: Track[]
 }
 
-export interface Queue {
+export interface Queue { //This interface is used to create queue objects which will be used to help keep track of different players during lazy loading
     id: string,
     tracks?: Track[]
 }
