@@ -14,16 +14,16 @@ interface MusicTileProps {
 function MusicTile(props: MusicTileProps) {
 
 
-    const {setCurrentTrackIndex, tracks, queue, setQueue} = useContext(AppContext)
+    const {setCurrentTrackIndex, tracks, playerTracks, setPlayerTracks} = useContext(AppContext)
 
     const selectTrack = () => {
-        console.log(queue.id)
-        if (queue.id != "tracks") {
+        console.log(playerTracks.id)
+        if (playerTracks.id != "tracks") {
             const trackQueue = {
                 id: "tracks",
                 tracks: tracks
             }
-            setQueue(trackQueue)
+            setPlayerTracks(trackQueue)
         }
         if (setCurrentTrackIndex !== undefined) {
             setCurrentTrackIndex(props.trackIndex)

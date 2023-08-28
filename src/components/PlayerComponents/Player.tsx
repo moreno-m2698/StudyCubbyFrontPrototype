@@ -21,7 +21,7 @@ function Player() {
     //Also allows us to specifically target and reveference the audio element
     //Spotify is probably using websockets to stream audio since I cannot find the audio tag
 
-    const {currentTrackIndex, queue} = useContext(AppContext)
+    const {currentTrackIndex, playerTracks} = useContext(AppContext)
 
     const [isPlaying, setIsPlaying] = useState(false); //Used to determine if the audio is playingS
 
@@ -39,9 +39,9 @@ function Player() {
 
     return (
         <PlayerContext.Provider value={{isPlaying, setIsPlaying}}>
-                {(queue.tracks.length === 0) ? null :
+                {(playerTracks.tracks.length === 0) ? null :
                 <>
-                <audio src={queue.tracks[currentTrackIndex].audio} ref={audioElement}></audio>
+                <audio src={playerTracks.tracks[currentTrackIndex].audio} ref={audioElement}></audio>
                 <Details/>
                 <Controls/>
                 <div className='player-placeholder'>

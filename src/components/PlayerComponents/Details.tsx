@@ -3,7 +3,7 @@ import { AppContext } from "../AppContextComponent"
 
 function Details() {
 
-    const {queue, currentTrackIndex} = useContext(AppContext)
+    const {playerTracks: queue, currentTrackIndex} = useContext(AppContext)
 
     return (<>
         <div className="player-details">

@@ -6,12 +6,12 @@ import { AppContext } from '../AppContextComponent';
 
 function Controls() {
 
-    const {currentTrackIndex, setCurrentTrackIndex, queue} = useContext(AppContext)
+    const {currentTrackIndex, setCurrentTrackIndex, playerTracks} = useContext(AppContext)
 
     const SkipTrack = (forwards = true) => {
         if (setCurrentTrackIndex  !== undefined) {
 
-            const endIndex = queue.tracks.length - 1;
+            const endIndex = playerTracks.tracks.length - 1;
 
             let tempT = ((forwards) ? 1 : -1) + currentTrackIndex;
 
