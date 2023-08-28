@@ -41,7 +41,7 @@ function Player() {
         <PlayerContext.Provider value={{isPlaying, setIsPlaying}}>
                 {(tracks.length === 0) ? null :
                 <>
-                <audio src={tracks[currentTrackIndex].audio} ref={audioElement}></audio>
+                <audio src={queue.tracks[currentTrackIndex].audio} ref={audioElement}></audio>
                 <Details/>
                 <Controls/>
                 <div className='player-placeholder'>
