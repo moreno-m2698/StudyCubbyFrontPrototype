@@ -1,0 +1,55 @@
+.music-tile-image {
+    padding-right: 8px;
+}
+
+
+.music-tile-image img{
+    width: 100%;
+    max-width: 48px;
+    border-radius: 12%;
+
+}
+
+.sidebar-item-info-container {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: auto;
+    
+    
+}
+
+.music-tile-title {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 2px;
+}
+
+
+
+.sidebar-item {
+    display: flex;
+    background-color: #1b2559;
+    border-radius: 6px;
+    width: 250px;
+    margin-left: 8px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+
+    
+}
+
+.content {
+    color:#8b7f75;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0,1,0,1);
+}
+
+.content.show {
+    height: auto;
+    max-height: 9999px;
+    transition: all 0.5s cubic-bezier(1,0,1,0);
+}

@@ -3,6 +3,7 @@ import { AppContext } from "../AppContextComponent.tsx"
 import { Album } from "../../types.ts"
 import { getAlbums, getAlbumTracks } from '../../API/AlbumAPICalls.tsx';
 import AlbumUnfoldComponent from "./AlbumUnfoldComponent.tsx";
+import '../../CSS/sidebar.css'
 
 
 
