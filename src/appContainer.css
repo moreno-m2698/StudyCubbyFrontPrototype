@@ -1,0 +1,45 @@
+.grid-container-1 {
+    display: grid;
+    grid-template-columns: minmax(282px, auto) 282px;
+    grid-template-rows: auto 70px;
+    row-gap: 8px;
+    column-gap: 8px;
+    background: #1c0151;
+}
+
+.player-sidebar-container {
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    display: flex;
+    overflow-y: auto;
+
+    background-color: #1b2559;
+    
+    height: 850px;
+
+    border-radius: 6px;
+    border: 8px;
+
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+
+.player-container {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display:flex;
+    background-color: #1c0151;
+    width: max-content;
+    border-radius: 6px;
+    height: 70px;
+    width: 100%;
+}
+
+.visualizer-container {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    flex: 1;
+}

@@ -6,7 +6,7 @@ import MusicSideBar from './MusicSideBarComponents/MusicSideBar';
 import NavBar from './NavBarComponents/MainNavBar';
 import { getTracks } from '../API/ApiCalls';
 
-
+import '../appContainer.css'
 import '../loader.css'
 import AlbumSideBar from './MusicSideBarComponents/AlbumSideBar';
 
@@ -68,11 +68,9 @@ function AppContextComponent() {
 
   
   return (
-    
     <>
-      <NavBar />
       <AppContext.Provider value = {{tracks, albums, currentTrackIndex, playerTracks, setCurrentTrackIndex, setTracks, setErrorState, setAlbums, setPlayerTracks }}>
-        <div className='grid-1-item visualizer'>
+        <div className='grid-1-item visualizer-container'>
           <Visualizer />
         </div>
         <div className='grid-1-item player-sidebar-container'>
@@ -87,7 +85,6 @@ function AppContextComponent() {
         </div>
       </AppContext.Provider>
     </>
-
   )
 }
 

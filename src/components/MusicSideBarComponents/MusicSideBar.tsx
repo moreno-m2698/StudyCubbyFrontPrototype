@@ -24,7 +24,7 @@ function MusicSideBar() {
                 tracks: tracks
               }
 
-                setPlayerTracks(trackQueue)
+              setPlayerTracks(trackQueue)
               setTracks(tracks)
               setErrorState(errorState)
             }

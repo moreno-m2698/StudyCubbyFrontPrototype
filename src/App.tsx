@@ -13,7 +13,7 @@ function App() {
         
     <>
         
-        {(!test) ? <div>
+        {(!test) ? <div className='navigation'>
         <nav>
             <ul>
                 <li>
@@ -24,6 +24,7 @@ function App() {
                 </li>
             </ul>
         </nav>
+
         <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="/upload" element={<Upload />}/>
