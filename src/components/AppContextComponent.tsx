@@ -26,13 +26,47 @@ export interface AppContextValues {
 export const AppContext = createContext<AppContextValues>({tracks: [], albums: [], currentTrackIndex: 0, playerTracks: {id: 'none', tracks: []}});
 
 function AppContextComponent() {
+  
+  const placeholderAlbum: Album = {
+    artist: 'artist',
+    id: 1,
+    title: "album title",
+    image: "https://cdn.dribbble.com/users/659193/screenshots/3022045/sad_coffee_dribbble.png",
+    queueId: "a1",
+    tracks: [
+      {
+        albumId: 1,
+        artist: 'artist',
+        id: 1,
+        index: 0,
+        title: 'song title'
 
-  const [tracks, setTracks] = useState<Track[]>([]);
-  const [albums, setAlbums] = useState<Album[]>([]);
+      }
+    ]
+  }
+
+  const placeholderTracks: Track = {
+    albumId: 1,
+    artist: 'artist',
+    id: 1,
+    index: 0,
+    title: 'song title',
+    image: 'https://cdn.dribbble.com/users/659193/screenshots/3022045/sad_coffee_dribbble.png'
+
+  }
+
+
+
+  const [tracks, setTracks] = useState<Track[]>([placeholderTracks]);
+  const [albums, setAlbums] = useState<Album[]>([placeholderAlbum]);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [errorState, setErrorState] = useState(false);
   const [isAlbumMode, setIsAlbumMode] = useState(true);
   const [playerTracks, setPlayerTracks] = useState<PlayerTracks>({id: 'none', tracks: []});
+
+
+ 
+
 
 
   const getButton = (content: string) => { //Button here for testing purposes, hopefully we can get the app to autopopulate on launch
