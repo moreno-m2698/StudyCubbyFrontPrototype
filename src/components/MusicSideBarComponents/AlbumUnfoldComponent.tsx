@@ -34,15 +34,14 @@ function AlbumUnfoldComponent(props: AlbumUnfoldProps) {
 
   return (
     <div className={props.selectedIndex === props.albumIndex ? 'content show' : 'content'}>
-      <ol className='album-accordion-list' aria-label='Album Tracks'>
+      <ol className='album-accordion-items' aria-label='Album Tracks'>
         {props.tracks.map((song, index) => (
-            <li>
-              <button onClick={() => {trackSelect(index); console.log(playerTracks)}} key={index} className='album-accordion-tracks'>
-                <div className='album-accordion-track'>
-                  <h4>
+            <li className='album-accordion-track'>
+              <button onClick={() => {trackSelect(index); console.log(playerTracks)}} key={index} className='album-track-button-grid'>
+                  <h4 className='album-track-index'>
                       { song.index + 1 }
                   </h4>
-                  <div>
+                  <div className='album-track-info'>
                     <h4>
                       {song.title}
                     </h4>
@@ -50,7 +49,6 @@ function AlbumUnfoldComponent(props: AlbumUnfoldProps) {
                       {song.artist}
                     </h5>
                   </div>
-                </div>
               </button>
             </li>
         ))}

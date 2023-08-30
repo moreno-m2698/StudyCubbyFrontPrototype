@@ -41,6 +41,14 @@ function AppContextComponent() {
         index: 0,
         title: 'song title'
 
+      },
+      {
+        albumId: 1,
+        artist: 'artist',
+        id: 2,
+        index: 1,
+        title: 'song title'
+
       }
     ]
   },
@@ -54,8 +62,16 @@ function AppContextComponent() {
       {
         albumId: 2,
         artist: 'artist',
-        id: 1,
+        id: 3,
         index: 0,
+        title: 'song title'
+
+      }, 
+      {
+        albumId: 2,
+        artist: 'artist',
+        id: 4,
+        index: 1,
         title: 'song title'
 
       }

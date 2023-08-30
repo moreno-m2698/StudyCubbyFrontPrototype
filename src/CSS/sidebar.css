@@ -3,32 +3,72 @@
     flex-direction: column;
 }
 
-.album-accordion-list li {
+.album-accordion-items {
+    display:flex;
+    flex-direction: column;
+}
+
+.album-accordion-items li {
     position: relative;
 }
 
-.album-accordion-track {
-    margin-top: 0.75rem;
-}
-
-.album-accordion-tracks {
-    display: flex;
-    flex-wrap: wrap;
-    border: none;
+.album-track-button-grid {
+    display:grid;
     background: transparent;
     width: 100%;
-    padding-left: 56px;
+    grid-template-columns: 50px auto;
+    gap:8px;
+    border:none;
+    padding: 4px;
 }
 
-.album-accordion-tracks h4 {
-    color: #8f9bd7;
+.album-track-button-grid h4 {
+    color: white;
 }
 
-.album-accordion-tracks:is(:hover, :focus-visible) h4 {
-    color: #d5dafc;
+.album-track-index {
+    display: flex;
+    height:100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.album-track-info {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+}
+
+.album-track-info h4{
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.album-track-info h5 {
+    display: flex;
+    justify-content: flex-start;
+    color: rgb(255 255 255 / 54%);
+
+}
+
+
+
+
+
+.album-track-button-grid:is(:hover, :focus-visible) {
+    background-color: rgba(143, 155, 215, 0.45);
+    transition: background-color 0.1s;
     cursor: pointer;
 }
 
+
+
+
+.music-tile-info {
+    width:auto;
+}
 
 .music-tile-image {
     margin-right: 8px;
@@ -73,9 +113,14 @@
     width: 250px;
 }
 
+.album-accordion-track-button {
+    margin-top: 0.75rem;
+    display: flex;
+    justify-content: center;
+}
+
 .sidebar-item-info-container {
     display:flex;
-    flex-direction: column;
     justify-content: space-between;
     width: auto;
 
@@ -119,6 +164,7 @@
 .content {
     max-height: 0;
     overflow: hidden;
+    width: 100%;
     transition: all 0.5s cubic-bezier(0,1,0,1);
 }
 
@@ -126,4 +172,5 @@
     height: auto;
     max-height: 9999px;
     transition: all 0.5s cubic-bezier(1,0,1,0);
+   
 }
