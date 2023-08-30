@@ -40,8 +40,16 @@ function AlbumUnfoldComponent(props: AlbumUnfoldProps) {
               <button onClick={() => {trackSelect(index); console.log(playerTracks)}} key={index} className='album-accordion-tracks'>
                 <div className='album-accordion-track'>
                   <h4>
-                      { song.index + 1 } {song.title} | {song.artist}
+                      { song.index + 1 }
                   </h4>
+                  <div>
+                    <h4>
+                      {song.title}
+                    </h4>
+                    <h5>
+                      {song.artist}
+                    </h5>
+                  </div>
                 </div>
               </button>
             </li>

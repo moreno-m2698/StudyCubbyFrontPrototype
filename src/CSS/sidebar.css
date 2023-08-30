@@ -1,4 +1,4 @@
-.album-accordion-album-list {
+.album-list {
     display: flex;
     flex-direction: column;
 }
@@ -58,7 +58,7 @@
     font-size: 14px;
 }
 
-.music-tile-info {
+.tile-info {
     display: flex;
     gap: 4px;
     flex-direction: column;
@@ -117,7 +117,6 @@
 
 
 .content {
-    color:#8b7f75;
     max-height: 0;
     overflow: hidden;
     transition: all 0.5s cubic-bezier(0,1,0,1);

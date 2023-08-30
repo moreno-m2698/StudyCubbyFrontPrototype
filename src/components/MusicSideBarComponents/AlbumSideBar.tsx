@@ -56,8 +56,8 @@ function AlbumSideBar() {
 
 
     return (
-        <div className="album-accordion">
-            <ul className='album-accordion-album-list'>
+        <div className="album-sidebar">
+            <ul className='album-list'>
                 {albums?.map((album:Album, index) =>
                     <li className='sidebar-item' key={index}>
                         <button
