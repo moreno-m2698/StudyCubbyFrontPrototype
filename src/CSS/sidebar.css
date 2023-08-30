@@ -95,6 +95,15 @@
     cursor: pointer;
 }
 
+
+/*Can't figure out why I'm unable to get this data toggle to work */
+.sidebar-item-button[data-toggle='true'] {
+    background-color: red;
+    
+
+}
+
+
 .sidebar-item-button:is(:hover, :focus-visible) {
     background-color: rgba(143, 155, 215, 0.45);
     transition: background-color 0.1s;
@@ -103,6 +112,7 @@
 .sidebar-item-button:not(:focus-visible) {
     outline: none;
 }
+
 
 
 

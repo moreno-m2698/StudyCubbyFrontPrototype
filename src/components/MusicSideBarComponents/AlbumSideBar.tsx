@@ -61,9 +61,10 @@ function AlbumSideBar() {
                 {albums?.map((album:Album, index) =>
                     <li className='sidebar-item' key={index}>
                         <button
+                            className='sidebar-item-button'
                             aria-label='Expand Album'
                             onClick={() => accordionToggle(index)}
-                            className='sidebar-item-button'
+                            data-toggled={index===selected}
                         >
                             <img className='music-tile-image' src={album.image} alt={album.title}/>
                             <div className='music-tile-info'>
