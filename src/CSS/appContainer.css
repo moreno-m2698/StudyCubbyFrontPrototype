@@ -12,6 +12,7 @@
     grid-column-end: 3;
 
     display: flex;
+    flex-direction: column;
     overflow-y: auto;
     box-sizing: border-box;
     background-color: #1b2559;

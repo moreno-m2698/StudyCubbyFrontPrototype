@@ -20,6 +20,7 @@
     gap:8px;
     border:none;
     padding: 4px;
+    border-radius: 6px;
 }
 
 .album-track-button-grid h4 {
@@ -28,10 +29,12 @@
 
 .album-track-index {
     display: flex;
-    height:100%;
+    height:26px;
     width: 100%;
     align-items: center;
     justify-content: center;
+    fill: white;
+
 }
 
 .album-track-info {

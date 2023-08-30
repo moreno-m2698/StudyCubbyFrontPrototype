@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { Track } from '../../types'
 import { AppContext } from '../AppContextComponent'
-
+import { HiMiniSpeakerWave } from "react-icons/hi2"
 interface AlbumUnfoldProps {
     tracks: Track[]
     selectedIndex: number|null
@@ -38,9 +38,10 @@ function AlbumUnfoldComponent(props: AlbumUnfoldProps) {
         {props.tracks.map((song, index) => (
             <li className='album-accordion-track'>
               <button onClick={() => {trackSelect(index); console.log(playerTracks)}} key={index} className='album-track-button-grid'>
-                  <h4 className='album-track-index'>
+                  {currentTrackIndex === index && playerTracks.id === props.queueId ? <HiMiniSpeakerWave className='album-track-index'/> : <h4 className='album-track-index'>
                       { song.index + 1 }
-                  </h4>
+                  </h4>}
+                  
                   <div className='album-track-info'>
                     <h4>
                       {song.title}
