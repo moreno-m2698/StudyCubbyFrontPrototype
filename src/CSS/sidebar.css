@@ -1,29 +1,10 @@
-.music-tile-image {
-    margin-right: 8px;
-    width: 48px;
-    height: 48px;
-    border-radius: 12%;
-}
-
-.music-tile-image img {
-    width: 100%;
-    max-width: 48px;
-    border-radius: 12%;
-}
-
-.sidebar-item-info-container {
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: auto;
-
-}
-
-.music-tile-title {
+.album-accordion-album-list {
     display: flex;
-    flex-wrap: nowrap;
-    color: white;
-    font-size: 16px;
+    flex-direction: column;
+}
+
+.album-accordion-list li {
+    position: relative;
 }
 
 .album-accordion-track {
@@ -48,6 +29,29 @@
     cursor: pointer;
 }
 
+
+.music-tile-image {
+    margin-right: 8px;
+    width: 48px;
+    height: 48px;
+    border-radius: 12%;
+}
+
+.music-tile-image img {
+    width: 100%;
+    max-width: 48px;
+    border-radius: 12%;
+}
+
+.music-tile-title {
+    display: flex;
+    flex-wrap: nowrap;
+    color: white;
+    font-size: 16px;
+}
+
+
+
 .music-tile-author {
     text-align: left;
     color: #8f9bd7;
@@ -67,7 +71,14 @@
     background-color: #1b2559;
     border-radius: 6px;
     width: 250px;
-    margin: 4px 0 4px 0;
+}
+
+.sidebar-item-info-container {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: auto;
+
 }
 
 .sidebar-item-button {
@@ -93,15 +104,7 @@
     outline: none;
 }
 
-.album-accordion-album-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.05rem;
-}
 
-.album-accordion-list li {
-    position: relative;
-}
 
 .content {
     color:#8b7f75;

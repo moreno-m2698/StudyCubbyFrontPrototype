@@ -27,10 +27,10 @@ export const AppContext = createContext<AppContextValues>({tracks: [], albums: [
 
 function AppContextComponent() {
   
-  const placeholderAlbum: Album = {
-    artist: 'artist',
+  const placeholderAlbums: Album[] = [{
+    artist: 'artist 1',
     id: 1,
-    title: "album title",
+    title: "album title 1",
     image: "https://cdn.dribbble.com/users/659193/screenshots/3022045/sad_coffee_dribbble.png",
     queueId: "a1",
     tracks: [
@@ -43,7 +43,23 @@ function AppContextComponent() {
 
       }
     ]
-  }
+  },
+
+  {artist: 'artist 2',
+    id: 2,
+    title: "album title 2",
+    image: "https://cdn.dribbble.com/users/659193/screenshots/3022045/sad_coffee_dribbble.png",
+    queueId: "a2",
+    tracks: [
+      {
+        albumId: 2,
+        artist: 'artist',
+        id: 1,
+        index: 0,
+        title: 'song title'
+
+      }
+    ]}]
 
   const placeholderTracks: Track = {
     albumId: 1,
@@ -58,7 +74,7 @@ function AppContextComponent() {
 
 
   const [tracks, setTracks] = useState<Track[]>([placeholderTracks]);
-  const [albums, setAlbums] = useState<Album[]>([placeholderAlbum]);
+  const [albums, setAlbums] = useState<Album[]>(placeholderAlbums);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [errorState, setErrorState] = useState(false);
   const [isAlbumMode, setIsAlbumMode] = useState(true);
