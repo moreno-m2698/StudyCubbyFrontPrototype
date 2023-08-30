@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { AppContext } from "../AppContextComponent.tsx"
-import { Album } from "../../types.ts"
+import {Album, Track} from "../../types.ts"
 import { getAlbums, getAlbumTracks } from '../../API/AlbumAPICalls.tsx';
 import AlbumUnfoldComponent from "./AlbumUnfoldComponent.tsx";
 import '../../CSS/sidebar.css'
@@ -11,7 +11,7 @@ function AlbumSideBar() {
 
     //Should have a scroll feature
     //Need to have sound tiles being made change song if they are clicked
-    
+
 
     const {albums, setAlbums} = useContext(AppContext)
     const [selected, setSelected] = useState<number|null>(null);
@@ -19,15 +19,15 @@ function AlbumSideBar() {
     useEffect(() => {
         (async() => {
             if (albums.length === 0 && setAlbums !== undefined) {
-              
+
                 const response = await getAlbums();
-                
+
                 const newAlbums = response
                 // for (let i = 0; i < newAlbums.length; i++) {
                 //     let album = newAlbums[i];
                 //     album.tracks =  await getAlbumTracks(album.id);
                 // }
-                
+
 
                 setAlbums(newAlbums)
 
@@ -37,7 +37,7 @@ function AlbumSideBar() {
     ,[])
 
     const accordionToggle = async (index: number) => {
-        
+
         const album = albums[index]
 
 
@@ -57,28 +57,29 @@ function AlbumSideBar() {
 
     return (
         <div className="album-accordion">
-            <ul>
-                {albums?.map((album:Album, index) => 
-                    <li className='sidebar-item' key={index} onClick={() => accordionToggle(index)}>
-                        <div className='music-tile-image'>
-                            <img src={album.image} alt={album.title}/>
-                        </div>
-                        <div className="sidebar-item-info-container">
-                            <div className="music-tile-title">
-                                <a role="button" title={album.title}>
-                                    <span>
-                                        {album.title}
-                                    </span>
-                                </a>
+            <ul className='album-accordion-album-list'>
+                {albums?.map((album:Album, index) =>
+                    <li className='sidebar-item' key={index}>
+                        <button
+                            aria-label='Expand Album'
+                            onClick={() => accordionToggle(index)}
+                            className='sidebar-item-button'
+                        >
+                            <img className='music-tile-image' src={album.image} alt={album.title}/>
+                            <div className='music-tile-info'>
+                                <h2 className="music-tile-title">
+                                    {album.title}
+                                </h2>
+                                <h3 className="music-tile-author">
+                                    {album.artist}
+                                </h3>
                             </div>
-                            <div className="music-tile-author">
-                                <span>{album.artist}</span>
-                            </div>         
-
+                        </button>
+                        <div className="sidebar-item-info-container">
                             {/*This is the toggle information*/}
 
-                            {!album.tracks ? null : <AlbumUnfoldComponent queueId={album.queueId} tracks={album.tracks} albumIndex={index} selectedIndex={selected}/>} 
-                        </div> 
+                            {!album.tracks ? null : <AlbumUnfoldComponent queueId={album.queueId} tracks={album.tracks} albumIndex={index} selectedIndex={selected}/>}
+                        </div>
                     </li>
                 )}
             </ul>

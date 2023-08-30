@@ -1,44 +1,106 @@
 .music-tile-image {
-    padding-right: 8px;
+    margin-right: 8px;
+    width: 48px;
+    height: 48px;
+    border-radius: 12%;
 }
 
-
-.music-tile-image img{
+.music-tile-image img {
     width: 100%;
     max-width: 48px;
     border-radius: 12%;
-
 }
 
 .sidebar-item-info-container {
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-top: 4px;
-    padding-bottom: 4px;
     width: auto;
-    
-    
+
 }
 
 .music-tile-title {
     display: flex;
     flex-wrap: nowrap;
-    margin-top: 2px;
+    color: white;
+    font-size: 16px;
 }
 
+.album-accordion-track {
+    margin-top: 0.75rem;
+}
 
+.album-accordion-tracks {
+    display: flex;
+    flex-wrap: wrap;
+    border: none;
+    background: transparent;
+    width: 100%;
+    padding-left: 56px;
+}
+
+.album-accordion-tracks h4 {
+    color: #8f9bd7;
+}
+
+.album-accordion-tracks:is(:hover, :focus-visible) h4 {
+    color: #d5dafc;
+    cursor: pointer;
+}
+
+.music-tile-author {
+    text-align: left;
+    color: #8f9bd7;
+    font-size: 14px;
+}
+
+.music-tile-info {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+}
 
 .sidebar-item {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: #1b2559;
     border-radius: 6px;
     width: 250px;
-    margin-left: 8px;
-    margin-bottom: 4px;
-    margin-top: 4px;
+    margin: 4px 0 4px 0;
+}
 
-    
+.sidebar-item-button {
+    display: flex;
+    flex-wrap: wrap;
+    border: none;
+    background: transparent;
+    padding: 4px;
+    border-radius: 6px;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    color: #8f9bd7;
+    cursor: pointer;
+}
+
+.sidebar-item-button:is(:hover, :focus-visible) {
+    background-color: rgba(143, 155, 215, 0.45);
+    transition: background-color 0.1s;
+}
+
+.sidebar-item-button:not(:focus-visible) {
+    outline: none;
+}
+
+.album-accordion-album-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.05rem;
+}
+
+.album-accordion-list li {
+    position: relative;
 }
 
 .content {
