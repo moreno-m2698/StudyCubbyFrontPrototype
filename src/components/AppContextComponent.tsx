@@ -89,17 +89,6 @@ function AppContextComponent() {
 
       )
     }
-
-  const modeSelector = (playerMode:boolean) => {
-    if (!playerMode) {
-      //We are in album mode
-
-    } else {
-    }
-    setIsAlbumMode(!playerMode)
-  }
-
-
   
   return (
     <>
@@ -108,7 +97,7 @@ function AppContextComponent() {
           <Visualizer />
         </div>
         <div className='grid-1-item player-sidebar-container'>
-          <button onClick={() => modeSelector(isAlbumMode)}>
+          <button onClick={() => setIsAlbumMode(!isAlbumMode)}>
             Swap
           </button>
           {isAlbumMode ? <AlbumSideBar/> : <MusicSideBar/>}
