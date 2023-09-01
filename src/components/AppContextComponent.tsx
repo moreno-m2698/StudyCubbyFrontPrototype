@@ -10,6 +10,7 @@ import '../CSS/appContainer.css'
 import '../CSS/loader.css'
 import AlbumSideBar from './MusicSideBarComponents/AlbumSideBar';
 import SidebarNavigator from './MusicSideBarComponents/SidebarNavigator';
+import PlayerSidebar from './MusicSideBarComponents/PlayerSidebar';
 
 
 export interface AppContextValues {
@@ -130,12 +131,8 @@ function AppContextComponent() {
           <Visualizer />
         </div>
         <div className='grid-1-item player-sidebar-container'>
-          <SidebarNavigator />
-          <button onClick={() => setIsAlbumMode(!isAlbumMode)}>
-            Swap
-          </button>
-          {isAlbumMode ? <AlbumSideBar/> : <MusicSideBar/>}
-          
+          <PlayerSidebar />
+        
         </div>
         <div className='grid-1-item player-container'>
           <Player />
