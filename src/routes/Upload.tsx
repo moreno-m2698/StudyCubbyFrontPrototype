@@ -12,7 +12,7 @@ function Upload() {
   const handleRadioClick = (event: React.ChangeEvent<HTMLInputElement>): void => setSelectedRadioButton(event.currentTarget.value);
 
   return (
-    <div className="upload-page">
+    <div className="upload-page app-grid-container-2">
       <h1>Upload Page</h1>
       <input type="radio" id='Album' name="upload-selector" value="Album" checked={isRadioSelected('Album')} onChange={handleRadioClick} />
       <label htmlFor="Album">Make an album</label><br></br>
