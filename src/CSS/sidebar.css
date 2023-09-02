@@ -70,13 +70,13 @@
     margin-right: 8px;
     width: 48px;
     height: 48px;
-    border-radius: 12%;
+    border-radius: 6px;
 }
 
 .music-tile-image img {
     width: 100%;
     max-width: 48px;
-    border-radius: 12%;
+    border-radius: 6px;
 }
 
 .music-tile-title {

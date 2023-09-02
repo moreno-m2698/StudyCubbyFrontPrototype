@@ -7,18 +7,14 @@ function Details() {
 
     return (<>
         <div className="player-details">
-            <div className='music-tile-image'>
-                <img src={queue.tracks[currentTrackIndex].image} alt={queue.tracks[currentTrackIndex].title}/>
-            </div>
-            <div className="track-info-container">
-                <div className="">
-                    <span>
+            <img src={queue.tracks[currentTrackIndex].image} alt={queue.tracks[currentTrackIndex].title}/>
+            <div className="player-info-container">
+                    <h2>
                         {queue.tracks[currentTrackIndex].title}
-                    </span>
-                </div>
-                <div className="">
-                    <span>{queue.tracks[currentTrackIndex].artist}</span>
-                </div>
+                    </h2>
+                    <h3>
+                        {queue.tracks[currentTrackIndex].artist}
+                    </h3>
             </div>
         </div>
     </>)

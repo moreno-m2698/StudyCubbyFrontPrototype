@@ -38,21 +38,42 @@
 }
 
 .player-controls {
+    margin-top: 8px;
     display:flex;
     justify-content: center;
     width:40%;
     height:auto;
 }
 
+
 .player-details {
     display: flex;
     width: 30%;
     border-radius: 6px;
-    margin-left: 8px;
-    margin-bottom: 4px;
-    margin-top: 4px;
+    gap: 4px
 }
 
+.player-details img{
+    margin: 8px;
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+    align-self: center;
+}
+
+.player-info-container{
+    align-self: center;
+}
+
+.player-info-container h2{
+    color: white;
+    font-size: 20px;
+}
+
+.player-info-container h3{
+    color: #8f9bd7;
+    font-size: 14px;
+}
 
 
 .player-placeholder {

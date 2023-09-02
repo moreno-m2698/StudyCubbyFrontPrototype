@@ -91,8 +91,8 @@ function AppContextComponent() {
 
 
 
-  const [tracks, setTracks] = useState<Track[]>([placeholderTracks]);
-  const [albums, setAlbums] = useState<Album[]>(placeholderAlbums);
+  const [tracks, setTracks] = useState<Track[]>([]);
+  const [albums, setAlbums] = useState<Album[]>([]);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [errorState, setErrorState] = useState(false);
   const [isAlbumMode, setIsAlbumMode] = useState(true);
