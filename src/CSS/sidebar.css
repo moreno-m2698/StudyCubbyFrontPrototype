@@ -38,9 +38,12 @@
 }
 
 .album-track-info {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-content: flex-start;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .album-track-info h4{
@@ -63,7 +66,10 @@
 }
 
 .music-tile-info {
-    width:auto;
+    width:100%;
+    white-space: nowrap;
+    overflow: hidden;
+
 }
 
 .music-tile-image {
@@ -103,10 +109,11 @@
 .sidebar-item {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: #1b2559;
     border-radius: 6px;
-    width: 250px;
+    width: 100%;
+    
 }
 
 .album-accordion-track-button {
@@ -124,7 +131,7 @@
 
 .sidebar-item-button {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     border: none;
     background: transparent;
     padding: 4px;
@@ -134,6 +141,8 @@
     align-items: center;
     color: #8f9bd7;
     cursor: pointer;
+    max-height: 56px;
+    overflow: hidden;
 }
 
 
