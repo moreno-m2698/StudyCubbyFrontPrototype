@@ -6,7 +6,7 @@ import MusicSideBar from './MusicSideBarComponents/MusicSideBar';
 import NavBar from './NavBarComponents/MainNavBar';
 import { getTracks } from '../API/ApiCalls';
 
-import '../CSS/appContainer.css'
+import '../CSS/appContextContainer.css'
 import '../CSS/loader.css'
 import AlbumSideBar from './MusicSideBarComponents/AlbumSideBar';
 import SidebarNavigator from './MusicSideBarComponents/SidebarNavigator';
