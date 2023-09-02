@@ -17,7 +17,7 @@ function App() {
         
 
         <div className='app-grid-container'>
-            <div className='page-navigator-container app-grid-container-1'>
+            <div className={isNavbarActive ? 'page-navigator-container app-grid-container-1 active' : "page-navigator-container app-grid-container-1"}>
                 <button 
                     className='route-sidebar-button'
                     aria-label="Expand navigation bar"
@@ -28,14 +28,18 @@ function App() {
                 <nav className={isNavbarActive ? "page-navigator active" : "page-navigator"}>
                     <ul>
                         <li >
-                            <Link to="/">
-                                <h2 className="navigator-tag">Home</h2>
-                            </Link>
+                            <button className="route-sidebar-button" onClick={() => setIsNavbarActive(false)}>
+                                <Link to="/">
+                                    <h2 className="navigator-tag">Home</h2>
+                                </Link>
+                            </button>
                         </li>
                         <li>
-                            <Link to="/upload">
-                                <h2 className="navigator-tag">Upload</h2>
-                            </Link>
+                            <button className="route-sidebar-button" onClick={() => setIsNavbarActive(false)}>
+                                <Link to="/upload">
+                                    <h2 className="navigator-tag">Upload</h2>
+                                </Link>
+                            </button>
                         </li>
                     </ul>
                 </nav>

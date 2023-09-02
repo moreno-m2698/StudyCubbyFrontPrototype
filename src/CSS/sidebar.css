@@ -56,18 +56,11 @@
 
 }
 
-
-
-
-
 .album-track-button-grid:is(:hover, :focus-visible) {
     background-color: rgba(143, 155, 215, 0.45);
     transition: background-color 0.1s;
     cursor: pointer;
 }
-
-
-
 
 .music-tile-info {
     width:auto;

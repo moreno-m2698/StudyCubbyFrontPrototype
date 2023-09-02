@@ -7,6 +7,8 @@
     justify-content: center;
     margin: 8px;
     padding: 3px;
+    height: min-content;
+    width: min-content;
 }
 
 .route-sidebar-button:is(:hover, :focus-visible) {
