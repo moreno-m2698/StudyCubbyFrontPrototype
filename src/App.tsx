@@ -25,35 +25,28 @@ function App() {
                     >
                         <VscThreeBars />
                     </button>
-                    <h1 id='app-logo'>
-                        App Title
-                    </h1>
+                    {/* think about how we will incorporate the app title */}
                     <nav className="app__nav" aria-hidden='true'>
                         {/*ask zach why we can get away without a list and why use a over buttons */}
-                        <a className="route-sidebar-button" onClick={() => setIsNavbarActive(false)} aria-hidden='true'>
-                            <Link to="/">
-                                <h2 className="navigator-tag">Home</h2>
-                            </Link>
-                        </a>
-                        <a className="route-sidebar-button" onClick={() => setIsNavbarActive(false)}  aria-hidden='true'>
-                            <Link to="/upload">
-                                <h2 className="navigator-tag">Upload</h2>
-                            </Link>
-                        </a>
+                        {/* links are automatically a tags */}
+                        <Link to="/" className="route-sidebar-button" onClick={() => setIsNavbarActive(false)} aria-hidden='true'>
+                            Home
+                        </Link>
+                        <Link to="/upload" className="route-sidebar-button" onClick={() => setIsNavbarActive(false)}  aria-hidden='true'>
+                            Upload
+                        </Link>
                     </nav>
                 </header>
-                <div className={isNavbarActive ? 'app__navbar nav__bar--active' : "app__navbar"}>
-                    
-                    
-                </div>
+                <main className="app__content">
+                    <Routes>
+                        <Route path="/" element={<Home />}/>
+                        <Route path="/upload" element={<Upload />}/>
+                    </Routes >
+                </main>
+                {/* maybe we lift up player so that u can technically listen to music even if the mode changes */}
             </div>
-
-            
-
-            <Routes>
-                <Route path="/" element={<Home />}/>
-                <Route path="/upload" element={<Upload />}/>
-            </Routes >
+ 
+                
         </div>
 
         
