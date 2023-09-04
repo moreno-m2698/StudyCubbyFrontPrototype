@@ -4,9 +4,6 @@ import Upload from "./routes/Upload";
 import Home from "./routes/Home";
 import {VscThreeBars } from "react-icons/vsc"
 import './CSS/app.css'
-// import './CSS/appContainer.css'
-// import './CSS/routeButton.css'
-
 
 function App() {
     
@@ -22,36 +19,32 @@ function App() {
                 <header className="app__header">
                     <button 
                         id='menu-button'
-                        aria-label="Expand navigation bar"
+                        aria-haspopup="true" 
+                        aria-expanded={`${isNavbarActive}`}
                         onClick={() => {setIsNavbarActive(!isNavbarActive); console.log(isNavbarActive);}}
                     >
                         <VscThreeBars />
-                        
                     </button>
-                    <h1>
+                    <h1 id='app-logo'>
                         App Title
                     </h1>
+                    <nav className="app__nav" aria-hidden='true'>
+                        {/*ask zach why we can get away without a list and why use a over buttons */}
+                        <a className="route-sidebar-button" onClick={() => setIsNavbarActive(false)} aria-hidden='true'>
+                            <Link to="/">
+                                <h2 className="navigator-tag">Home</h2>
+                            </Link>
+                        </a>
+                        <a className="route-sidebar-button" onClick={() => setIsNavbarActive(false)}  aria-hidden='true'>
+                            <Link to="/upload">
+                                <h2 className="navigator-tag">Upload</h2>
+                            </Link>
+                        </a>
+                    </nav>
                 </header>
                 <div className={isNavbarActive ? 'app__navbar nav__bar--active' : "app__navbar"}>
                     
-                    <nav className={isNavbarActive ? "nav__bar__nav--active" : "nav__bar__nav"}>
-                        <ul className='nav__list'>
-                            <li className='list__item'>
-                                <button className="route-sidebar-button" onClick={() => setIsNavbarActive(false)}>
-                                    <Link to="/">
-                                        <h2 className="navigator-tag">Home</h2>
-                                    </Link>
-                                </button>
-                            </li>
-                            <li>
-                                <button className="route-sidebar-button" onClick={() => setIsNavbarActive(false)}>
-                                    <Link to="/upload">
-                                        <h2 className="navigator-tag">Upload</h2>
-                                    </Link>
-                                </button>
-                            </li>
-                        </ul>
-                    </nav>
+                    
                 </div>
             </div>
 

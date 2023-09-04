@@ -24,7 +24,27 @@
 
 }
 
-.app__header h1{
+.app__nav {
+    z-index: 1;
+    position: fixed;
+    inset: 0 auto auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0;
+    height: 100vh;
+    background-color: #222;
+    opacity: 0;
+    overflow: auto;
+    transition: opacity 0.1s, width 0.1s;
+}
+
+a {
+    color: #fff;
+  }
+
+#app-logo {
+    min-width: min-content;
     display:flex;
     color: white; 
     align-items: center;
@@ -51,3 +71,8 @@
     height: 100%;
     width: 100%;
 }
+
+#menu-button[aria-expanded="true"] ~ .app__nav {
+    opacity: .5;
+    width: min(11rem, 100vw);
+  }
