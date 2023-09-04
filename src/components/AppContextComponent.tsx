@@ -3,7 +3,7 @@ import { Track, Album, PlayerTracks } from '../types';
 import Visualizer from './VisualizerComponents/Visualizer';
 import Player from './PlayerComponents/Player';
 import { getTracks } from '../API/ApiCalls';
-
+import '../CSS/content.css';
 //import '../CSS/appContextContainer.css'
 //import '../CSS/loader.css'
 import PlayerSidebar from './MusicSideBarComponents/PlayerSidebar';
@@ -123,14 +123,14 @@ function AppContextComponent() {
   return (
     <>
       <AppContext.Provider value = {{tracks, albums, currentTrackIndex, playerTracks, setCurrentTrackIndex, setTracks, setErrorState, setAlbums, setPlayerTracks }}>
-        <div className='grid-1-item visualizer-container'>
-          {/*<Visualizer />*/}
+        <div className='visualizer'>
+          <Visualizer />
         </div>
-        <div className='grid-1-item player-sidebar-container'>
+        <div className='sidebar'>
           <PlayerSidebar />
         
         </div>
-        <div className='grid-1-item player-container'>
+        <div className='player'>
           <Player />
         </div>
       </AppContext.Provider>

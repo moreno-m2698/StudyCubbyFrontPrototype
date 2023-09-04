@@ -1,0 +1,22 @@
+
+
+
+
+.toplevel__visualizer {
+    overflow: hidden;
+    width: 68%;
+    border: 2px blue solid;
+}
+
+.toplevel__sidebar {
+    width: 30%;
+    border: 2px blue solid;
+
+}
+
+.player {
+    width: 100%;
+    border: 2px blue solid;
+}
+
+/* We are taking advantage of flex-wrap:flex of parent |don't know if this is legal
