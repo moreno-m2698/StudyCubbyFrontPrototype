@@ -3,7 +3,7 @@ import { AppContext } from "../AppContextComponent.tsx"
 import MusicTile from "./MusicTile"
 import { Track } from "../../types.ts"
 import { getTracks } from '../../API/ApiCalls';
-import '../../CSS/sidebar.css'
+//import '../../CSS/sidebar.css'
 
 
 function MusicSideBar() {

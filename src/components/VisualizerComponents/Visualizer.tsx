@@ -1,4 +1,4 @@
-import '../../CSS/visualizer.css'
+// import '../../CSS/visualizer.css'
 
 function Visualizer() {
     return <div className="visualizer">

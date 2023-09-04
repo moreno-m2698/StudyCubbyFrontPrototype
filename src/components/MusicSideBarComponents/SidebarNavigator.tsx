@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import '../../CSS/sidebarNavigator.css'
+//import '../../CSS/sidebarNavigator.css'
 
 interface SidebarNavigatorProps {
   playerMode: string|undefined,

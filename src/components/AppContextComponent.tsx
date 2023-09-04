@@ -2,14 +2,10 @@ import { useState, createContext } from 'react';
 import { Track, Album, PlayerTracks } from '../types';
 import Visualizer from './VisualizerComponents/Visualizer';
 import Player from './PlayerComponents/Player';
-import MusicSideBar from './MusicSideBarComponents/MusicSideBar';
-import NavBar from './NavBarComponents/MainNavBar';
 import { getTracks } from '../API/ApiCalls';
 
-import '../CSS/appContextContainer.css'
-import '../CSS/loader.css'
-import AlbumSideBar from './MusicSideBarComponents/AlbumSideBar';
-import SidebarNavigator from './MusicSideBarComponents/SidebarNavigator';
+//import '../CSS/appContextContainer.css'
+//import '../CSS/loader.css'
 import PlayerSidebar from './MusicSideBarComponents/PlayerSidebar';
 
 
@@ -91,8 +87,8 @@ function AppContextComponent() {
 
 
 
-  const [tracks, setTracks] = useState<Track[]>([]);
-  const [albums, setAlbums] = useState<Album[]>([]);
+  const [tracks, setTracks] = useState<Track[]>([placeholderTracks]);
+  const [albums, setAlbums] = useState<Album[]>(placeholderAlbums);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [errorState, setErrorState] = useState(false);
   const [isAlbumMode, setIsAlbumMode] = useState(true);
@@ -128,7 +124,7 @@ function AppContextComponent() {
     <>
       <AppContext.Provider value = {{tracks, albums, currentTrackIndex, playerTracks, setCurrentTrackIndex, setTracks, setErrorState, setAlbums, setPlayerTracks }}>
         <div className='grid-1-item visualizer-container'>
-          <Visualizer />
+          {/*<Visualizer />*/}
         </div>
         <div className='grid-1-item player-sidebar-container'>
           <PlayerSidebar />

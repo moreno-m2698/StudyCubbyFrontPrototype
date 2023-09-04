@@ -89,7 +89,7 @@
     display: flex;
     flex-wrap: nowrap;
     color: white;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 
@@ -97,7 +97,7 @@
 .music-tile-author {
     text-align: left;
     color: #8f9bd7;
-    font-size: 14px;
+    font-size: .875rem;
 }
 
 .tile-info {

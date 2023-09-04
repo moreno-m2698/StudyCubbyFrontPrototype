@@ -5,8 +5,8 @@
     display:flex;
     align-items: center;
     justify-content: center;
-    margin: 8px;
-    padding: 3px;
+    margin: .32em;
+    padding: .12em;
     height: min-content;
     width: min-content;
 }
@@ -14,13 +14,13 @@
 .route-sidebar-button:is(:hover, :focus-visible) {
     background-color: rgba(143, 155, 215, 0.45);
     transition: background-color 0.15s;
-    border-radius: 6px;
+    border-radius: .24em;
 }
 
 .route-sidebar-button svg{
     fill: rgba(255, 255, 255, 0.507);
-    height: 25px;
-    width: 25px;
+    height: 1.5625rem;
+    width: 1.5625rem;
 }
 
 .route-sidebar-button:is(:hover, :focus-visible) svg {

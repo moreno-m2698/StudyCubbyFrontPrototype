@@ -11,7 +11,7 @@ input[type='radio'] {
 label {
     position: relative;
     color: white;
-    font-size: 18px;
+    font-size: 1.125rem;
     border: 2px solid white;
     border-radius: 56px;
     padding: 5px;
