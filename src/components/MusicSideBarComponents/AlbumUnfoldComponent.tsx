@@ -33,10 +33,10 @@ function AlbumUnfoldComponent(props: AlbumUnfoldProps) {
   }
 
   return (
-    <ol className={props.selectedIndex === props.albumIndex ? 'sidebar__content--show' : 'sidebar__content'} aria-label='Album Tracks'>
+    <ol className={props.selectedIndex === props.albumIndex ? 'sidebar__content accordion--show' : 'sidebar__content accordion'} aria-label='Album Tracks'>
       {props.tracks.map((song, index) => (
           <li className='sidebar__item'>
-            <button onClick={() => {trackSelect(index); console.log(playerTracks)}} key={index} className='sidebar__button'>
+            <button onClick={() => {trackSelect(index); console.log(playerTracks)}} key={index} className='sidebar__button' aria-label='Select Track'>
                 {currentTrackIndex === index && playerTracks.id === props.queueId ? <HiMiniSpeakerWave id='speaker'/> : <h4 className='album-track-index'>
                     { song.index + 1 }
                 </h4>}

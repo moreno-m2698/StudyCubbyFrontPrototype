@@ -38,7 +38,7 @@ function MusicTile(props: MusicTileProps) {
             <button 
                 onClick={() => selectTrack()}
                 className='sidebar__button'
-                aria-label='Play Track'
+                aria-label='Select Track'
             >            
                 <img className='sidebar__image' src={props.track.image} alt={props.track.title}/>
                 <div className='sidebar__info'>

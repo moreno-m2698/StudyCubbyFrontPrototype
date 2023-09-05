@@ -4,12 +4,11 @@
     width: 100%;
     /*placeholder height value */
     height: fit-content;
-    border: 2px blue solid;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr;
     z-index: 100;
-    background-color: black;
+    background-color: rgb(26, 26, 26);
     
 }
 
@@ -35,9 +34,52 @@
 }
 
 .player__controls {
-    grid-area: 1/ 2/ -1/ 3;
+    grid-area: 1/ 2/ -1 / 3;
+
     display: flex;
     justify-content: center;
+    min-width: max-content;
+    width: auto;
+    gap:.5em;
+    padding-top: .75em;
+}
+
+.player__controls  button {
+    cursor: pointer;
+}
+
+
+.player__play {
+    background-color: #a119cd;
+    color:black;
+    border: none;
+    border-radius: 100%;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player__play:is(:hover, :focus-visible) {
+    background-color: red;
+    transition: background-color 0.1s;
+}
+
+
+.player__skip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    height: 2rem;
+    width: 2rem;
+}
+
+.player__skip:is(:hover, :focus-visible) {
+    fill: white;
+    transition: fill .2s;
 }
 
 .player__info {

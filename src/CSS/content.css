@@ -32,7 +32,6 @@
     width: 100%;
     /*placeholder height value */
     height: 3em;
-    border: 2px blue solid;
 }
 
 /* We are taking advantage of flex-wrap:flex of parent |don't know if this is legal

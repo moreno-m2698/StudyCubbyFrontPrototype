@@ -68,3 +68,17 @@
     font-size: .875rem;
     align-self: flex-start;
 }
+
+.accordion {
+    max-height: 0;
+    overflow: hidden;
+    width: 100%;
+    transition: all 0.5s cubic-bezier(0,1,0,1);
+}
+
+.accordion--show {
+    height: auto;
+    max-height: 9999px;
+    transition: all 0.5s cubic-bezier(1,0,1,0);
+   
+}
