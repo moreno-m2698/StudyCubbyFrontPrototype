@@ -68,6 +68,7 @@ a {
 .app__content {
     display:flex;
     width: 100%;
+    justify-content: right;
     background-color: #ddd;
     flex-wrap: wrap;
 }

@@ -1,181 +1,57 @@
-.sidebar-list {
-    display: flex;
-    flex-direction: column;
+.sidebar__radio {
+    width: 100%;
 }
 
-.album-accordion-items {
+.sidebar__content{
+    width: 100%
+
+}
+
+.sidebar__content li {
+    width: 100%;
+}
+
+.sidebar__content button {
+    width: 100%;
+    height: fit-content;
     display:flex;
-    flex-direction: column;
-}
-
-.album-accordion-items li {
-    position: relative;
-}
-
-.album-track-button-grid {
-    display:grid;
-    background: transparent;
-    width: 100%;
-    grid-template-columns: 50px auto;
-    gap:8px;
-    border:none;
-    padding: 4px;
-    border-radius: 6px;
-}
-
-.album-track-button-grid h4 {
-    color: white;
-}
-
-.album-track-index {
-    display: flex;
-    height:26px;
-    width: 100%;
+    overflow:hidden;
     align-items: center;
-    justify-content: center;
-    fill: white;
-
-}
-
-.album-track-info {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-content: flex-start;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.album-track-info h4{
-    display: flex;
-    justify-content: flex-start;
-
-}
-
-.album-track-info h5 {
-    display: flex;
-    justify-content: flex-start;
-    color: rgb(255 255 255 / 54%);
-
-}
-
-.album-track-button-grid:is(:hover, :focus-visible) {
+    box-sizing: border-box;
+    padding:.5em;
+    gap: .5em;
+    border: none;
+    border-radius:0rem;
     background-color: rgba(143, 155, 215, 0.45);
-    transition: background-color 0.1s;
     cursor: pointer;
 }
 
-.music-tile-info {
-    width:100%;
-    white-space: nowrap;
-    overflow: hidden;
-
-}
-
-.music-tile-image {
-    margin-right: 8px;
-    width: 48px;
-    height: 48px;
+.sidebar__image {
+    width: 3rem;
+    height: 3rem;
     border-radius: 6px;
 }
 
-.music-tile-image img {
+
+.sidebar__image img {
     width: 100%;
-    max-width: 48px;
+    max-width: 3rem;
     border-radius: 6px;
 }
 
-.music-tile-title {
-    display: flex;
-    flex-wrap: nowrap;
+.sidebar__info {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar__info h2,h4{
     color: white;
     font-size: 1rem;
 }
 
-
-
-.music-tile-author {
-    text-align: left;
+.sidebar__info h3, h5 {
     color: #8f9bd7;
     font-size: .875rem;
-}
-
-.tile-info {
-    display: flex;
-    gap: 4px;
-    flex-direction: column;
-}
-
-.sidebar-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    background-color: #1b2559;
-    border-radius: 6px;
-    width: 100%;
-    
-}
-
-.album-accordion-track-button {
-    margin-top: 0.75rem;
-    display: flex;
-    justify-content: center;
-}
-
-.sidebar-item-info-container {
-    display:flex;
-    justify-content: space-between;
-    width: auto;
-
-}
-
-.sidebar-item-button {
-    display: flex;
-    flex-wrap: nowrap;
-    border: none;
-    background: transparent;
-    padding: 4px;
-    border-radius: 6px;
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    color: #8f9bd7;
-    cursor: pointer;
-    max-height: 56px;
-    overflow: hidden;
-}
-
-
-/*Can't figure out why I'm unable to get this data toggle to work */
-.sidebar-item-button[data-toggle='true'] {
-    background-color: red;
-    
-
-}
-
-
-.sidebar-item-button:is(:hover, :focus-visible) {
-    background-color: rgba(143, 155, 215, 0.45);
-    transition: background-color 0.1s;
-}
-
-.sidebar-item-button:not(:focus-visible) {
-    outline: none;
-}
-
-
-
-
-.content {
-    max-height: 0;
-    overflow: hidden;
-    width: 100%;
-    transition: all 0.5s cubic-bezier(0,1,0,1);
-}
-
-.content.show {
-    height: auto;
-    max-height: 9999px;
-    transition: all 0.5s cubic-bezier(1,0,1,0);
-   
+    align-self: flex-start;
 }

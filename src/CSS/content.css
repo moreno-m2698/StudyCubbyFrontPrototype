@@ -1,21 +1,34 @@
 
 
-
-
-.toplevel__visualizer {
+.visualizer {
+    
     overflow: hidden;
-    width: 68%;
+    width: auto;
     border: 2px blue solid;
+    align-self: stretch;
 }
 
-.toplevel__sidebar {
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    overflow:hidden;
+    min-width: 16rem;
     width: 30%;
     border: 2px blue solid;
-
+    box-sizing: border-box;
+    padding: .5em;
+    gap: .5em;
+}
+.sidebar > * {
+    flex-shrink: 0;
 }
 
 .player {
+    position: fixed;
+    bottom: 0;
     width: 100%;
+    /*placeholder height value */
+    height: 3em;
     border: 2px blue solid;
 }
 

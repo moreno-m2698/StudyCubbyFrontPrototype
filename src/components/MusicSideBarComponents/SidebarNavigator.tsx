@@ -12,7 +12,7 @@ function SidebarNavigator(props: SidebarNavigatorProps) {
     const isRadioSelected = (value: string): boolean => props.playerMode === value;
     const handleRadioClick = (event: React.ChangeEvent<HTMLInputElement>): void => props.setPlayerMode(event.currentTarget.value);
   return (
-    <div className='sidebar-navigator'>
+    <div className='sidebar__radio'>
         <input type='radio' name='sidebar-mode' id='albums' value='albums' checked={isRadioSelected('albums')} onChange={handleRadioClick}/>
         <label htmlFor='albums'>Albums</label>
         <input type='radio' name='sidebar-mode' id='tracks' value='tracks' checked={isRadioSelected('tracks')} onChange={handleRadioClick}/>

@@ -34,18 +34,18 @@ function MusicTile(props: MusicTileProps) {
 
     return (
 
-        <li className="sidebar-item">
+        <li className="sidebar__item">
             <button 
                 onClick={() => selectTrack()}
-                className='sidebar-item-button'
+                className='sidebar__button'
                 aria-label='Play Track'
             >            
-                <img className='music-tile-image' src={props.track.image} alt={props.track.title}/>
-                <div className='music-tile-info'>
-                    <h2 className="music-tile-title">
+                <img className='sidebar__image' src={props.track.image} alt={props.track.title}/>
+                <div className='sidebar__info'>
+                    <h2>
                         {props.track.title}
                     </h2>
-                    <h3 className="music-tile-author">
+                    <h3>
                         {props.track.artist}
                     </h3>
                 </div>

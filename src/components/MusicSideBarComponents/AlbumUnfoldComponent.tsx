@@ -33,29 +33,25 @@ function AlbumUnfoldComponent(props: AlbumUnfoldProps) {
   }
 
   return (
-    <div className={props.selectedIndex === props.albumIndex ? 'content show' : 'content'}>
-      <ol className='album-accordion-items' aria-label='Album Tracks'>
-        {props.tracks.map((song, index) => (
-            <li className='album-accordion-track'>
-              <button onClick={() => {trackSelect(index); console.log(playerTracks)}} key={index} className='album-track-button-grid'>
-                  {currentTrackIndex === index && playerTracks.id === props.queueId ? <HiMiniSpeakerWave className='album-track-index'/> : <h4 className='album-track-index'>
-                      { song.index + 1 }
-                  </h4>}
-                  
-                  <div className='album-track-info'>
-                    <h4>
-                      {song.title}
-                    </h4>
-                    <h5>
-                      {song.artist}
-                    </h5>
-                  </div>
-              </button>
-            </li>
-        ))}
-        </ol>
-    </div>
-
+    <ol className={props.selectedIndex === props.albumIndex ? 'sidebar__content--show' : 'sidebar__content'} aria-label='Album Tracks'>
+      {props.tracks.map((song, index) => (
+          <li className='sidebar__item'>
+            <button onClick={() => {trackSelect(index); console.log(playerTracks)}} key={index} className='sidebar__button'>
+                {currentTrackIndex === index && playerTracks.id === props.queueId ? <HiMiniSpeakerWave id='speaker'/> : <h4 className='album-track-index'>
+                    { song.index + 1 }
+                </h4>}
+                <div className='sidebar__info'>
+                  <h4>
+                    {song.title}
+                  </h4>
+                  <h5>
+                    {song.artist}
+                  </h5>
+                </div>
+            </button>
+          </li>
+      ))}
+    </ol>
   )
 }
 

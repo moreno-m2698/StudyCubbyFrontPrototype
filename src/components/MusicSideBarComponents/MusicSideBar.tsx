@@ -36,11 +36,9 @@ function MusicSideBar() {
 
 
     return (
-        <div className="track-sidebar">
-          <ul className="sidebar-list">
+          <ul className="sidebar__content">
               {tracks.map((track:Track, index) => <MusicTile track={track} key={index} trackIndex={index}/>)}
           </ul>
-        </div>
     )
 }
 

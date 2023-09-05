@@ -4,6 +4,7 @@ import Visualizer from './VisualizerComponents/Visualizer';
 import Player from './PlayerComponents/Player';
 import { getTracks } from '../API/ApiCalls';
 import '../CSS/content.css';
+import '../CSS/sidebar.css'
 //import '../CSS/appContextContainer.css'
 //import '../CSS/loader.css'
 import PlayerSidebar from './MusicSideBarComponents/PlayerSidebar';
@@ -128,7 +129,6 @@ function AppContextComponent() {
         </div>
         <div className='sidebar'>
           <PlayerSidebar />
-        
         </div>
         <div className='player'>
           <Player />
