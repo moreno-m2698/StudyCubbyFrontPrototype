@@ -11,13 +11,16 @@
 .sidebar {
     display: flex;
     flex-direction: column;
+    /* overflow creates sidebar that then screws up stuff */
     overflow:hidden;
     min-width: 16rem;
+    max-height: 100%;
     width: 30%;
     border: 2px blue solid;
     box-sizing: border-box;
     padding: .5em;
     gap: .5em;
+    overflow-y: auto;
 }
 .sidebar > * {
     flex-shrink: 0;

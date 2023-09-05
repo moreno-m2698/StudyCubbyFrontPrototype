@@ -6,9 +6,9 @@ function Details() {
     const {playerTracks: queue, currentTrackIndex} = useContext(AppContext)
 
     return (<>
-        <div className="player-details">
-            <img src={queue.tracks[currentTrackIndex].image} alt={queue.tracks[currentTrackIndex].title}/>
-            <div className="player-info-container">
+        <div className="player__details">
+            <img src={queue.tracks[currentTrackIndex].image} alt={queue.tracks[currentTrackIndex].title} className='player__image'/>
+            <div className="player__info">
                     <h2>
                         {queue.tracks[currentTrackIndex].title}
                     </h2>

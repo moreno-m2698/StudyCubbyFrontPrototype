@@ -21,8 +21,14 @@
     padding:.5em;
     gap: .5em;
     border: none;
-    border-radius:0rem;
+    border-radius:.625em;
+    cursor: pointer;
+    background: none;
+}
+
+.sidebar__content button:is(:hover, :focus-visible) {
     background-color: rgba(143, 155, 215, 0.45);
+    transition: background-color 0.1s;
     cursor: pointer;
 }
 
@@ -42,7 +48,14 @@
 .sidebar__info {
     display:flex;
     flex-direction: column;
+    overflow:hidden;
+    flex-wrap: nowrap;
     justify-content: space-between;
+}
+
+.sidebar__info > * {
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .sidebar__info h2,h4{
