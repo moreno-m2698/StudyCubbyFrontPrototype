@@ -21,6 +21,13 @@
     height: calc(100% - var(--bottom-height))
 }
 
+@media (min-width: 600px) {
+    .app__main {
+        flex-direction: column;
+    }
+}
+
+
 .app__header {
     position: fixed;
     height: var(--header-height);
