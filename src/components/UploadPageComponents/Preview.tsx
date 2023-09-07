@@ -44,7 +44,7 @@ function Preview(props:PreviewProps) {
     
 
   return (
-    <div className='upload__previewer'>
+    <ul className='upload__previewer'>
          {props.fileData.map((element, index) => (
           <DraggablePreview
             key={element.id}
@@ -58,7 +58,7 @@ function Preview(props:PreviewProps) {
             handleDrop={handleDrop}
           />
         ))}
-    </div>
+    </ul>
   )
 }
 

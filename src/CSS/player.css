@@ -9,7 +9,7 @@
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr;
     z-index: 100;
-    background-color: rgb(26, 26, 26);
+    background-color: var(--app-border);
     
 }
 

@@ -3,10 +3,11 @@
     --bottom-height: 6rem;
     --sidebar-color: #1b2559;
     --app-color:#000622;
+    --app-border: #1a1a1a;
 
     width: 100%;
     height: 100%;
-    background-color: black;
+    background-color: var(--app-border);
 }
 
 .app__main {
@@ -24,7 +25,7 @@
     position: fixed;
     height: var(--header-height);
     width: 100%;
-    background-color: black;
+    background-color: var(--app-border);
     z-index: 50;
 }
 

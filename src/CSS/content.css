@@ -4,11 +4,19 @@
     flex-grow: 1;
     overflow: hidden;
     width: auto;
-    border: 2px blue solid;
     border-radius: 1.25em;
     margin: .5em;
-    align-self: stretch;
+    display: flex;
+    align-items: center;
     background: none;
+}
+
+.visualizer__image {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    border-radius: 1.25em;
 }
 
 .sidebar {
