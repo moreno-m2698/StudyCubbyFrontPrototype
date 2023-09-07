@@ -53,7 +53,7 @@ function SingleMaker() {
 
   return (
     <>
-        <h3 className='upload__header'>
+        <h3 className='upload__mode'>
           Single Upload
         </h3>
         <form encType='multipart/form-data' onSubmit={handleUpload}>
