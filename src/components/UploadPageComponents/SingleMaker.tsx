@@ -52,7 +52,10 @@ function SingleMaker() {
 
 
   return (
-    <div>Single Maker
+    <>
+        <h3 className='upload__header'>
+          Single Upload
+        </h3>
         <form encType='multipart/form-data' onSubmit={handleUpload}>
             <label htmlFor="cover-file">Cover Upload</label>
             <input type='file' id='cover-file' accept='image/*' name='cover' onChange={(event: any) => coverFileInputChange(event)}/>
@@ -64,8 +67,7 @@ function SingleMaker() {
             <input type='text' placeholder='Artist' onChange={(event: React.ChangeEvent<HTMLInputElement>) => setArtist(event.target.value)}/>
             <input type='submit' />
         </form>
-
-    </div>
+    </>
   )
 }
 

@@ -44,7 +44,7 @@ function Preview(props:PreviewProps) {
     
 
   return (
-    <div className='previewer'>
+    <div className='upload__previewer'>
          {props.fileData.map((element, index) => (
           <DraggablePreview
             key={element.id}

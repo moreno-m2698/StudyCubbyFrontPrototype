@@ -4,6 +4,7 @@
     width: 100%;
     /*placeholder height value */
     height: fit-content;
+    max-height: var(--bottom-height);
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr;

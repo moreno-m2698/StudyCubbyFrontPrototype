@@ -1,24 +1,35 @@
 .app {
+    --header-height: 4rem;
+    --bottom-height: 6rem;
+    --sidebar-color: #1b2559;
+    --app-color:#000622;
+
     width: 100%;
     height: 100%;
-    background-color: rgb(214, 0, 0);
+    background-color: black;
 }
 
 .app__main {
     position: relative;
     display: flex;
     flex-wrap: wrap;
+    background-color: var(--app-color);
     gap: .5rem;
     width: 100%;
     /*TODO: worry about adjusting this height later once get the player in */
-    height: calc(100% - 3rem) 
+    height: calc(100% - var(--bottom-height))
 }
 
 .app__header {
-    position: absolute;
-    background-color: #ccc;
+    position: fixed;
+    height: var(--header-height);
+    width: 100%;
+    background-color: black;
+    z-index: 50;
+
 
 }
+
 
 .app__nav {
     z-index: 1;
@@ -47,15 +58,22 @@ a {
     display:flex;
     align-items: center;
     justify-content: center;
-    border: 1px white solid;
-    background: yellow;
+    border: none;
+    border-radius: .45em;
+    background: none;
     width: 3rem;
     height: 3rem;
     margin: .45em;
+    opacity: .45;
+}
+
+#menu-button:is(:hover, :focus-visible){
+    opacity: 1;
+    background-color:rgba(34, 34, 34, 0.5);
 }
 
 #menu-button svg{
-    fill: purple;
+    fill: rgb(65, 65, 65);
     height: 100%;
     width: 100%;
 }
@@ -66,10 +84,12 @@ a {
 }
 
 .app__content {
+    margin-top: var(--header-height);
     display:flex;
-    width: 100%;
+    
     justify-content: right;
-    background-color: #ddd;
     flex-wrap: wrap;
+    flex-grow: 1;
+    flex-basis: 100%
 }
 

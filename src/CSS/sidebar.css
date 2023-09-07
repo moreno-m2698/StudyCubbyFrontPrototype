@@ -1,5 +1,30 @@
 .sidebar__radio {
     width: 100%;
+    gap: .5em;
+    display: flex;
+}
+
+.sidebar__radio label {
+    flex: 0 1;
+    position: relative;
+    color: rgb(155, 155, 155);
+    font-size: 1.125rem;
+    border-radius: 1em;
+    padding: .4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.sidebar__radio input[type='radio'] {
+    display: none;
+}
+
+.sidebar__radio input[type='radio']:checked + label {
+    background: rgba(143, 155, 215, 0.45);
+    color: white;
+    transition: all .2s 
 }
 
 .sidebar__content{
@@ -8,10 +33,12 @@
 }
 
 .sidebar__content li {
+    background-color: var(--sidebar-color);
     width: 100%;
 }
 
 .sidebar__content button {
+    background-color: var(--sidebar-color);
     width: 100%;
     height: fit-content;
     display:flex;
@@ -23,7 +50,10 @@
     border: none;
     border-radius:.625em;
     cursor: pointer;
-    background: none;
+}
+
+.album__button {
+    z-index: 3;
 }
 
 .sidebar__content button:is(:hover, :focus-visible) {
@@ -70,15 +100,18 @@
 }
 
 .accordion {
+    background-color: var(--sidebar-color);
     max-height: 0;
     overflow: hidden;
     width: 100%;
-    transition: all 0.5s cubic-bezier(0,1,0,1);
+    transition: max-height 0.75s cubic-bezier(0,1,0,1);
 }
 
 .accordion--show {
+    background-color: var(--sidebar-color);
     height: auto;
     max-height: 9999px;
-    transition: all 0.5s cubic-bezier(1,0,1,0);
+    transition: max-height 0.75s cubic-bezier(1,0,1,0);
    
 }
+
