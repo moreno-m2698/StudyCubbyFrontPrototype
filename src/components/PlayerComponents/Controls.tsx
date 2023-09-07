@@ -29,7 +29,7 @@ function Controls() {
     }
 
     return (
-        <div className="player-controls">
+        <div className="player__controls">
             <SkipBackwardButton SkipTrack = {SkipTrack}/>
             <PlayButton />
             <SkipForwardButton SkipTrack = {SkipTrack}/>

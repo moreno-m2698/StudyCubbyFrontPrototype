@@ -1,0 +1,96 @@
+.app {
+    --header-height: 4rem;
+    --bottom-height: 6rem;
+    --sidebar-color: #1b2559;
+    --app-color:#000622;
+    --app-border: #1a1a1a;
+
+    width: 100%;
+    height: 100%;
+    background-color: var(--app-border);
+}
+
+.app__main {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--app-color);
+    gap: .5rem;
+    width: 100%;
+    /*TODO: worry about adjusting this height later once get the player in */
+    height: calc(100% - var(--bottom-height))
+}
+
+.app__header {
+    position: fixed;
+    height: var(--header-height);
+    width: 100%;
+    background-color: var(--app-border);
+    z-index: 50;
+}
+
+
+.app__nav {
+    z-index: 1;
+    position: fixed;
+    inset: 0 auto auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0;
+    height: 100vh;
+    background-color: #222;
+    opacity: 0;
+    overflow: auto;
+    transition: opacity 0.1s, width 0.1s;
+    flex-direction: column;
+    gap: 1em;
+}
+
+a {
+    color: #fff;
+}
+
+
+
+#menu-button {
+    position: absolute;
+    z-index: 100;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: .45em;
+    background: none;
+    width: 3rem;
+    height: 3rem;
+    margin: .45em;
+    opacity: .45;
+}
+
+#menu-button:is(:hover, :focus-visible){
+    opacity: 1;
+    background-color:rgba(34, 34, 34, 0.5);
+}
+
+#menu-button svg{
+    fill: rgb(65, 65, 65);
+    height: 100%;
+    width: 100%;
+}
+
+#menu-button[aria-expanded="true"] ~ .app__nav {
+    opacity: .5;
+    width: min(11rem, 100vw);
+}
+
+.app__content {
+    margin-top: var(--header-height);
+    display:flex;
+    
+    justify-content: right;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-basis: 100%
+}
+

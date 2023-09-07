@@ -36,14 +36,17 @@ function AlbumMaker() {
     
 
   return (
-    <div>AlbumMaker
+    <>
+        <h3 className='upload__header'>
+          Album Upload
+        </h3>
         <form encType='multipart/form-data' onSubmit={handleUpload}>
             <input type='file' accept='image/*' name='cover' onChange={(event: any) => fileInputChange(event)}/>
             <input type='text' placeholder='Title' onChange={(event: React.ChangeEvent<HTMLInputElement>) => setTitle(event.target.value)}/>
             <input type='text' placeholder='Artist' onChange={(event: React.ChangeEvent<HTMLInputElement>) => setArtist(event.target.value)}/>
             <input type='submit' />
         </form>
-    </div>
+    </>
   )
 }
 

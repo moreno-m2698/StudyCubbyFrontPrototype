@@ -96,7 +96,11 @@ function Tracks() {
 
     return (
         (files.length === 0) ?
-        <div {...getRootProps()} style={{ border: '1px solid #ccc', padding: '20px', textAlign: 'center' }}>
+        
+        <div {...getRootProps()} style={{ border: '1px solid #ccc', padding: '1rem', textAlign: 'center', margin: '1rem' }}>
+            <h3 className="upload__header">
+              Upload Tracks
+            </h3>
             <input {...getInputProps()} />
             {isDragActive ? (
                 <p>Drop your files here ... </p>
@@ -106,7 +110,7 @@ function Tracks() {
         </div>
         :
         <div>
-            <h1>Preview</h1>
+            <h3 className='upload__header'>Preview</h3>
             <form encType='multipart/form-data' onSubmit={handleSubmit}>
                 <input type='text' placeholder='album ID' onChange={(event: React.ChangeEvent<HTMLInputElement>) => setAlbumID(event.target.value)}/>
                 <Preview fileData = {filePreview} setFileData={setFilePreview}/>

@@ -3,7 +3,7 @@ import { AppContext } from "../AppContextComponent.tsx"
 import {Album, Track} from "../../types.ts"
 import { getAlbums, getAlbumTracks } from '../../API/AlbumAPICalls.tsx';
 import AlbumUnfoldComponent from "./AlbumUnfoldComponent.tsx";
-import '../../CSS/sidebar.css'
+//import '../../CSS/sidebar.css'
 
 
 
@@ -56,35 +56,30 @@ function AlbumSideBar() {
 
 
     return (
-        <div className="album-sidebar">
-            <ul className='sidebar-list'>
+            <ul className='sidebar__content'>
                 {albums?.map((album:Album, index) =>
-                    <li className='sidebar-item' key={index}>
+                    <li className='sidebar__item' key={index}>
                         <button
-                            className='sidebar-item-button'
+                            className='sidebar__button album__button'
                             aria-label='Expand Album'
                             onClick={() => accordionToggle(index)}
                             data-toggled={index===selected}
                         >
-                            <img className='music-tile-image' src={album.image} alt={album.title}/>
-                            <div className='music-tile-info'>
-                                <h2 className="music-tile-title">
+                            <img className='sidebar__image' src={album.image} alt={album.title}/>
+                            <div className='sidebar__info'>
+                                <h2>
                                     {album.title}
                                 </h2>
-                                <h3 className="music-tile-author">
+                                <h3>
                                     {album.artist}
                                 </h3>
                             </div>
                         </button>
-                        <div className="sidebar-item-info-container">
-                            {/*This is the toggle information*/}
-
-                            {!album.tracks ? null : <AlbumUnfoldComponent queueId={album.queueId} tracks={album.tracks} albumIndex={index} selectedIndex={selected}/>}
-                        </div>
+                        {/*This is the toggle information*/}
+                        {!album.tracks ? null : <AlbumUnfoldComponent queueId={album.queueId} tracks={album.tracks} albumIndex={index} selectedIndex={selected}/>}
                     </li>
                 )}
             </ul>
-        </div>
     )
 }
 

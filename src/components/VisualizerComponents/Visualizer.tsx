@@ -1,10 +1,8 @@
-import '../../CSS/visualizer.css'
+// import '../../CSS/visualizer.css'
 
 function Visualizer() {
-    return <div className="visualizer">
-        <img src="https://images.unsplash.com/photo-1631044176346-804c33ade61c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2046&q=80" alt="Visualizer">
-        </img>
-    </div>
+    return <img className="visualizer__image" src='https://static.vecteezy.com/system/resources/thumbnails/027/419/597/small_2x/relax-on-balcony-lo-fi-aesthetic-wallpaper-opened-window-curtains-blowing-in-wind-2d-cartoon-interior-illustration-purple-lofi-background-90s-retro-album-art-chill-vibes-vector.jpg'/>
+
 }
 
 export default Visualizer

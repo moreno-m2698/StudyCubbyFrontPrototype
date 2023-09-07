@@ -2,10 +2,8 @@ import { useState } from "react";
 import {Route, Routes, Link } from "react-router-dom";
 import Upload from "./routes/Upload";
 import Home from "./routes/Home";
-import { AiOutlineBars } from "react-icons/ai";
-import './CSS/appContainer.css'
-import './CSS/routeButton.css'
-
+import {VscThreeBars } from "react-icons/vsc"
+import './CSS/app.css'
 
 function App() {
     
@@ -16,41 +14,39 @@ function App() {
     <>
         
 
-        <div className='app-grid-container'>
-            <div className={isNavbarActive ? 'page-navigator-container app-grid-container-1 active' : "page-navigator-container app-grid-container-1"}>
-                <button 
-                    className='route-sidebar-button'
-                    aria-label="Expand navigation bar"
-                    onClick={() => {setIsNavbarActive(!isNavbarActive); console.log(isNavbarActive);}}
-                >
-                    <AiOutlineBars />
-                </button>
-                <nav className={isNavbarActive ? "page-navigator active" : "page-navigator"}>
-                    <ul>
-                        <li >
-                            <button className="route-sidebar-button" onClick={() => setIsNavbarActive(false)}>
-                                <Link to="/">
-                                    <h2 className="navigator-tag">Home</h2>
-                                </Link>
-                            </button>
-                        </li>
-                        <li>
-                            <button className="route-sidebar-button" onClick={() => setIsNavbarActive(false)}>
-                                <Link to="/upload">
-                                    <h2 className="navigator-tag">Upload</h2>
-                                </Link>
-                            </button>
-                        </li>
-                    </ul>
-                </nav>
+        <div id ='app' className='app'>
+            <div className="app__main">
+                <header className="app__header">
+                    <button 
+                        id='menu-button'
+                        aria-haspopup="true" 
+                        aria-expanded={`${isNavbarActive}`}
+                        onClick={() => {setIsNavbarActive(!isNavbarActive); console.log(isNavbarActive);}}
+                    >
+                        <VscThreeBars />
+                    </button>
+                    {/* think about how we will incorporate the app title */}
+                    <nav className="app__nav" aria-hidden='true'>
+                        {/*ask zach why we can get away without a list and why use a over buttons */}
+                        {/* links are automatically a tags */}
+                        <Link to="/" className="route-sidebar-button" onClick={() => setIsNavbarActive(false)} aria-hidden='true'>
+                            Home
+                        </Link>
+                        <Link to="/upload" className="route-sidebar-button" onClick={() => setIsNavbarActive(false)}  aria-hidden='true'>
+                            Upload
+                        </Link>
+                    </nav>
+                </header>
+                <main className="app__content">
+                    <Routes>
+                        <Route path="/" element={<Home />}/>
+                        <Route path="/upload" element={<Upload />}/>
+                    </Routes >
+                </main>
+                {/* maybe we lift up player so that u can technically listen to music even if the mode changes */}
             </div>
-
-            
-
-            <Routes>
-                <Route path="/" element={<Home />}/>
-                <Route path="/upload" element={<Upload />}/>
-            </Routes >
+ 
+                
         </div>
 
         
