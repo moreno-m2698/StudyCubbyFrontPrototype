@@ -97,7 +97,7 @@ function Tracks() {
     return (
         (files.length === 0) ?
         
-        <div {...getRootProps()} style={{ border: '1px solid #ccc', padding: '20px', textAlign: 'center' }}>
+        <div {...getRootProps()} style={{ border: '1px solid #ccc', padding: '1rem', textAlign: 'center', margin: '1rem' }}>
             <h3 className="upload__header">
               Upload Tracks
             </h3>
