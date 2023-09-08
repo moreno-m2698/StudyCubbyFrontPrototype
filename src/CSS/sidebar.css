@@ -25,22 +25,16 @@
 .sidebar__radio input[type='radio']:checked + label {
     background: rgba(143, 155, 215, 0.45);
     color: white;
-    transition: all .2s 
+    transition: all .2s
 }
 
 .sidebar__content{
-    width: 100%;
-    
-
-}
-
-.outer {
-    overflow-y: auto;
-    height: calc(100% - 52px);
+    max-width: 20rem;
+    height: 100%;
+    overflow: auto;
 }
 
 .sidebar__content li {
-    background-color: var(--sidebar-color);
     width: 100%;
 }
 
@@ -74,7 +68,6 @@
     height: 3rem;
     border-radius: 6px;
 }
-
 
 .sidebar__image img {
     width: 100%;
@@ -119,6 +112,6 @@
     height: auto;
     max-height: 9999px;
     transition: max-height 0.75s cubic-bezier(1,0,1,0);
-   
+
 }
 

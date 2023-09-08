@@ -26,7 +26,7 @@ export interface AppContextValues {
 export const AppContext = createContext<AppContextValues>({tracks: [], albums: [], currentTrackIndex: 0, playerTracks: {id: 'none', tracks: []}});
 
 function AppContextComponent() {
-  
+
   const placeholderAlbums: Album[] = [{
     artist: 'artist 1',
     id: 1,
@@ -66,7 +66,7 @@ function AppContextComponent() {
         index: 0,
         title: 'song title'
 
-      }, 
+      },
       {
         albumId: 2,
         artist: 'artist',
@@ -89,7 +89,7 @@ function AppContextComponent() {
           id: 1,
           index: 0,
           title: 'song title'
-  
+
         },
         {
           albumId: 1,
@@ -97,11 +97,11 @@ function AppContextComponent() {
           id: 2,
           index: 1,
           title: 'song title'
-  
+
         }
       ]
     },
-  
+
     {artist: 'artist 2',
       id: 2,
       title: "album title 2",
@@ -114,15 +114,15 @@ function AppContextComponent() {
           id: 3,
           index: 0,
           title: 'song title'
-  
-        }, 
+
+        },
         {
           albumId: 2,
           artist: 'artist',
           id: 4,
           index: 1,
           title: 'song title'
-  
+
         }
       ]},
       {
@@ -138,7 +138,7 @@ function AppContextComponent() {
             id: 1,
             index: 0,
             title: 'song title'
-    
+
           },
           {
             albumId: 1,
@@ -146,11 +146,11 @@ function AppContextComponent() {
             id: 2,
             index: 1,
             title: 'song title'
-    
+
           }
         ]
       },
-    
+
       {artist: 'artist 2',
         id: 2,
         title: "album title 2",
@@ -163,15 +163,15 @@ function AppContextComponent() {
             id: 3,
             index: 0,
             title: 'song title'
-    
-          }, 
+
+          },
           {
             albumId: 2,
             artist: 'artist',
             id: 4,
             index: 1,
             title: 'song title'
-    
+
           }
         ]},
         {
@@ -187,7 +187,7 @@ function AppContextComponent() {
               id: 1,
               index: 0,
               title: 'song title'
-      
+
             },
             {
               albumId: 1,
@@ -195,11 +195,11 @@ function AppContextComponent() {
               id: 2,
               index: 1,
               title: 'song title'
-      
+
             }
           ]
         },
-      
+
         {artist: 'artist 2',
           id: 2,
           title: "album title 2",
@@ -212,15 +212,15 @@ function AppContextComponent() {
               id: 3,
               index: 0,
               title: 'song title'
-      
-            }, 
+
+            },
             {
               albumId: 2,
               artist: 'artist',
               id: 4,
               index: 1,
               title: 'song title'
-      
+
             }
           ]},
           {
@@ -236,7 +236,7 @@ function AppContextComponent() {
                 id: 1,
                 index: 0,
                 title: 'song title'
-        
+
               },
               {
                 albumId: 1,
@@ -244,11 +244,11 @@ function AppContextComponent() {
                 id: 2,
                 index: 1,
                 title: 'song title'
-        
+
               }
             ]
           },
-        
+
           {artist: 'artist 2',
             id: 2,
             title: "album title 2",
@@ -261,15 +261,15 @@ function AppContextComponent() {
                 id: 3,
                 index: 0,
                 title: 'song title'
-        
-              }, 
+
+              },
               {
                 albumId: 2,
                 artist: 'artist',
                 id: 4,
                 index: 1,
                 title: 'song title'
-        
+
               }
             ]}]
 
@@ -293,16 +293,16 @@ function AppContextComponent() {
   const [playerTracks, setPlayerTracks] = useState<PlayerTracks>({id: 'none', tracks: []});
 
 
- 
+
 
 
 
   const getButton = (content: string) => { //Button here for testing purposes, hopefully we can get the app to autopopulate on launch
     return (
       <>
-        <button 
+        <button
             className='blue-btn'
-            onClick={() => getTracks()}      
+            onClick={() => getTracks()}
         >{content}</button>
       </>
       )
@@ -317,21 +317,21 @@ function AppContextComponent() {
 
       )
     }
-  
+
   return (
     <>
       <AppContext.Provider value = {{tracks, albums, currentTrackIndex, playerTracks, setCurrentTrackIndex, setTracks, setErrorState, setAlbums, setPlayerTracks }}>
-        <div className = "app__body">
+        <section aria-label={'Music Player'} className = "app__body">
           <div className='visualizer'>
             <Visualizer />
           </div>
           <div className='sidebar'>
             <PlayerSidebar />
           </div>
-        </div>
-        <div className='player'>
+        </section>
+        <footer className='player'>
           <Player />
-        </div>
+        </footer>
       </AppContext.Provider>
     </>
   )
