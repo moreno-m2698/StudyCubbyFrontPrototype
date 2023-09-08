@@ -14,6 +14,13 @@
 
 }
 
+@media (max-height: 750px) {
+    .player {
+        position: relative;
+    }
+}
+
+
 .player__details {
     box-sizing: border-box;
     grid-area: 1 / 1 / -1 / 2;

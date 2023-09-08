@@ -44,8 +44,6 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    /*placeholder height value */
     height: 3em;
 }
 
-/* We are taking advantage of flex-wrap:flex of parent |don't know if this is legal

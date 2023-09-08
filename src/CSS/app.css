@@ -17,7 +17,6 @@
     background-color: var(--app-color);
 
     width: 100%;
-    /*TODO: worry about adjusting this height later once get the player in */
     height: 100%;
 }
 
@@ -29,6 +28,13 @@
     background-color: var(--app-border);
     z-index: 50;
 }
+
+@media (max-height: 750px) {
+    .app__header {
+        position: relative;
+    }
+}
+
 
 .app__content {
     display: grid;
