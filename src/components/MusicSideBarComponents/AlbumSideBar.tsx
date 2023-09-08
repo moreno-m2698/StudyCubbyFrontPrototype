@@ -56,7 +56,7 @@ function AlbumSideBar() {
 
 
     return (
-            <ul className='sidebar__content'>
+            <ul className='sidebar__content outer'>
                 {albums?.map((album:Album, index) =>
                     <li className='sidebar__item' key={index}>
                         <button

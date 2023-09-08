@@ -4,16 +4,3 @@
     font-family: sans-serif;
     color: #cccccc
 }
-
-body {
-    width: 100vw;
-    height: 100vh;
-    margin: 0px;
-    padding: 0px;
-    
-}
-
-#root {
-    height: 100%;
-    width: 100%;
-}
