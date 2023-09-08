@@ -321,11 +321,13 @@ function AppContextComponent() {
   return (
     <>
       <AppContext.Provider value = {{tracks, albums, currentTrackIndex, playerTracks, setCurrentTrackIndex, setTracks, setErrorState, setAlbums, setPlayerTracks }}>
-        <div className='visualizer'>
-          <Visualizer />
-        </div>
-        <div className='sidebar'>
-          <PlayerSidebar />
+        <div className = "app__body">
+          <div className='visualizer'>
+            <Visualizer />
+          </div>
+          <div className='sidebar'>
+            <PlayerSidebar />
+          </div>
         </div>
         <div className='player'>
           <Player />

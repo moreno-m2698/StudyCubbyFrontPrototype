@@ -1,7 +1,8 @@
 
 
 .visualizer {
-    max-height: 98%;
+    min-height: 200px;
+    height: calc(100% - var(--header-height));
     flex-grow: 1;
     overflow: hidden;
     width: auto;
@@ -10,6 +11,8 @@
     display: flex;
     align-items: center;
     background: none;
+    z-index: 0;
+    position: relative;
 }
 
 .visualizer__image {
@@ -21,20 +24,22 @@
 }
 
 .sidebar {
+    z-index: 0;
+    position: relative;
     display: flex;
     flex-direction: column;
     /* overflow creates sidebar that then screws up stuff */
     overflow:hidden;
     flex-basis: 30%;
     max-width: 20rem;
-    max-height: 98%;
+    height: calc(100% - var(--header-height));
+    min-height: 200px;
     background-color: var(--sidebar-color);
     border-radius: 1.25em;
     box-sizing: border-box;
     margin: .5em;
     padding: .5em;
     gap: .5em;
-    overflow-y: auto;
     flex-grow: 1;
 }
 .sidebar > * {

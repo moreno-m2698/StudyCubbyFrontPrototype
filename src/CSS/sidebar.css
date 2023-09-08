@@ -1,4 +1,5 @@
 .sidebar__radio {
+    height: 36px;
     width: 100%;
     gap: .5em;
     display: flex;
@@ -28,8 +29,14 @@
 }
 
 .sidebar__content{
-    width: 100%
+    width: 100%;
+    
 
+}
+
+.outer {
+    overflow-y: auto;
+    height: calc(100% - 52px);
 }
 
 .sidebar__content li {
