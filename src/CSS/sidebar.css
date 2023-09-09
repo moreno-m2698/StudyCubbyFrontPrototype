@@ -32,6 +32,7 @@
 .sidebar__content{
     width: 100%;
     height: calc(100% - 36px);
+    max-height: 48.75rem;
     
 }
 
