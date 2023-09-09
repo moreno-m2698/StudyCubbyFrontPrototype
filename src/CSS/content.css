@@ -1,7 +1,7 @@
 
 
 .visualizer {
-    min-height: 200px;
+    height: 100%;
     flex-grow: 1;
     overflow: hidden;
     width: auto;
