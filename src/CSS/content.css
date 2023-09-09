@@ -31,6 +31,7 @@
     grid-template: max-content 1fr / 1fr;
     box-sizing: border-box;
     border-radius: 1.25em;
+    width: 20rem;
     min-width: 20rem;
     margin: 0.5em;
     padding: 0.5em;
