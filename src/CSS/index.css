@@ -19,3 +19,13 @@
     background-color: #4848bb;
     border-radius: 16px;
 }
+
+input[type='submit'] {
+    color: black;
+    margin-top: 1em;
+}
+
+input[type='text'] {
+    color: black;
+    margin: .25em;
+}
