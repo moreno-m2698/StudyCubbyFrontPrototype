@@ -3,6 +3,7 @@
     width: 100%;
     gap: .5em;
     display: flex;
+    margin-bottom: .5em;
 }
 
 .sidebar__radio label {
@@ -29,9 +30,14 @@
 }
 
 .sidebar__content{
-    max-width: 20rem;
-    height: 100%;
-    overflow: auto;
+    width: 100%;
+    height: calc(100% - 36px);
+    max-height: 48.75rem;
+    
+}
+
+.outer {
+    overflow:auto;
 }
 
 .sidebar__content li {
