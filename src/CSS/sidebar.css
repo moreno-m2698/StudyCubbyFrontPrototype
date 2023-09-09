@@ -30,7 +30,7 @@
 }
 
 .sidebar__content{
-    max-width: 20rem;
+    width: 100%;
     height: calc(100% - 36px);
     
 }
