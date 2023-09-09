@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    color: #cccccc
+    color: #cccccc;
+    scrollbar-gutter: stable;
 }
 
 
@@ -12,7 +13,7 @@
 
 ::-webkit-scrollbar-track {
     background-color: #3e446b;
-    border-radius: 16px;
+
 }
 
 ::-webkit-scrollbar-thumb {
