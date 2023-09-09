@@ -48,6 +48,12 @@
     flex-wrap: wrap;
 }
 
+@media (max-width: 1094px) {
+    .app__body {
+        flex-direction: column;
+    }
+}
+
 .app__nav {
     z-index: 1;
     position: fixed;
